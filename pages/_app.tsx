@@ -5,7 +5,11 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
   <div>
-    <NavBar />
+    <header 
+    // className="sticky top-0 z-50"
+    >
+      <NavBar />
+    </header>
     <Component {...pageProps} />
   </div>
   )
