@@ -13,6 +13,9 @@ module.exports = {
         },
         matrix_green_header: {
           DEFAULT: '#39744d'
+        },
+        matrix_bg_color: {
+          DEFAULT: '#1f452c'
         }
       }
     },

@@ -4,7 +4,7 @@ class MyDocument extends Document {
 
     render() {
       return (
-        <Html lang="en">
+        <Html lang="en" className='scroll-smooth'>
           <Head>
             <link href="http://fonts.cdnfonts.com/css/antimatrix" rel="stylesheet" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />

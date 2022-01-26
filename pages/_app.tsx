@@ -4,12 +4,8 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-  <div>
-    <header 
-    // className="sticky top-0 z-50"
-    >
-      <NavBar />
-    </header>
+  <div className='relative'> 
+    <NavBar />
     <Component {...pageProps} />
   </div>
   )
