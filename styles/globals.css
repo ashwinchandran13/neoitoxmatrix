@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .layer1t {
+    background-image: url('../public/assets/images/layered1t.svg')
+  }
+  .layer1b {
+    background-image: url('../public/assets/images/layered1b.svg')
+  }
+}
+
 body {
   background-color: black;
   font-family: 'Rubik', sans-serif;

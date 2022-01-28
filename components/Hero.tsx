@@ -5,7 +5,7 @@ const Hero = () => {
       return location.href = '#mission'
   }
   return (
-    <header className='relative flex items-center justify-center h-screen mb-12 overflow-hidden'
+    <header className='relative flex items-center justify-center h-screen overflow-hidden'
     // className="sticky top-0 z-50"
     >
       <div className='relative z-30 flex flex-col w-auto h-auto p-4 backdrop-blur-sm'>
@@ -28,7 +28,7 @@ const Hero = () => {
 
       <video
         autoPlay
-        className='absolute top-0 z-10 w-auto bg-fixed bg-center bg-cover lg:h-auto md:h-3/4 lg:min-w-full lg:min-h-full max-w-none '
+        className='absolute top-0 z-10 w-auto bg-fixed bg-center bg-cover lg:h-auto md:h-3/4 lg:min-w-full lg:min-h-full max-w-none aspect-video'
         loop
         muted
       >

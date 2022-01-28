@@ -8,7 +8,9 @@ const index = () => {
   return (
     <div className='relative'>
         <Hero />
+        <div className='-mt-11 w-full bg-center bg-no-repeat bg-cover aspect-[900/280] layer1t' />
         <Mission />
+        <div className='-mt-72 w-full bg-center bg-no-repeat bg-cover aspect-[900/280] layer1b' />
     </div>
   );
 };
