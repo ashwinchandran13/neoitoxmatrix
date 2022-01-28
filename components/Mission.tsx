@@ -5,7 +5,7 @@ import team from '../public/assets/images/team.png';
 
 const Mission = () => {
   return (
-      <div className='flex w-auto -mt-80 place-items-center h-96 ' id='mission'>
+      <div className='relative flex w-auto place-items-center' id='mission'>
           <div className='p-4 ml-4 shadow-lg md:p-2 sm:p-1 h-fit w-fit justify-self-center'>
               <Image 
                 src={planning}

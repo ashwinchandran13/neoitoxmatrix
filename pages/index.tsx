@@ -3,14 +3,16 @@ import Image from 'next/image'
 import matrixbg from '../public/assets/images/matrix.jpg';
 import Hero from '../components/Hero';
 import Mission from '../components/Mission';
+import Domains from '../components/Domains';
 
 const index = () => {
   return (
     <div className='relative'>
         <Hero />
-        <div className='-mt-11 w-full bg-center bg-no-repeat bg-cover aspect-[900/280] layer1t' />
+        <div className='w-full bg-center bg-no-repeat bg-cover aspect-[900/100] layer1t' />
         <Mission />
-        <div className='-mt-72 w-full bg-center bg-no-repeat bg-cover aspect-[900/280] layer1b' />
+        <div className='w-full bg-center bg-no-repeat bg-cover aspect-[900/100] layer1b' />
+        <Domains />
     </div>
   );
 };
