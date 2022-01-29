@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'matrixFont': ['Antimatrix', 'Open Sans']
+        'matrixFont': ['Antimatrix', 'Open Sans'],
+        'matrixCode': ['"Matrix Code NFI"', 'sans-serif']
       },
       colors: {
         matrix_green_btn: {
