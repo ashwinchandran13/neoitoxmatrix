@@ -16,8 +16,9 @@
   .mask-vr {
     mask: url("#vr");
   }
-  .internal-vr {
-    mask: url('#vrMask');
+
+  .mask-ai {
+    mask: url("#ai");
   }
   
 }
