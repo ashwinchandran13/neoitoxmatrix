@@ -21,6 +21,26 @@
     mask: url("#ai");
   }
   
+  .mask-iot {
+    mask: url("#iot");
+  }
+
+  .mask-security {
+    mask: url("#security");
+  }
+
+  .mask-cg {
+    mask: url("#cg");
+  }
+
+  .mask-systemProgramming {
+    mask: url('#systemProgramming')
+  }
+
+  .mask-app {
+    mask: url('#app')
+  }
+  
 }
 
 body {
