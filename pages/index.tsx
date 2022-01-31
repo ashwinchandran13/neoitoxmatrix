@@ -10,9 +10,10 @@ const index = () => {
     <div className='relative'>
         <Hero />
         <div className='w-full bg-center bg-no-repeat bg-cover aspect-[900/100] layer1t' />
-        <Mission />
-        <div className='w-full bg-center bg-no-repeat bg-cover aspect-[900/100] layer1b' />
-        <Domains />
+        <div className='bg-radial_circular_bg'>
+          <Mission />
+          <Domains />
+        </div>
     </div>
   );
 };

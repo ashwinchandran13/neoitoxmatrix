@@ -9,6 +9,7 @@
   .layer1b {
     background-image: url('../public/assets/images/layered1b.svg')
   }
+  
   .mask-bg {
     mask: url("#mask");
   }

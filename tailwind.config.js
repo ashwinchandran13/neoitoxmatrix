@@ -20,6 +20,9 @@ module.exports = {
         },
         radial_matrix_bg: {
           DEFAULT: 'radial-gradient(100% 185.14% at 100% 100%, rgb(36, 151, 93) 0%, rgb(101, 222, 138) 100%)'
+        },
+        radial_circular_bg: {
+          DEFAULT: 'radial-gradient(#39744d, #000000)'
         }
       }
     },
