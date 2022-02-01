@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Domains = () => {
 
-  const [maskStyle, setMaskStyle] = useState('mask-bg');
+  const [maskStyle, setMaskStyle] = useState('mask-iot');
 
   return (
     <div className='box-border relative object-cover p-0 mx-0 lg:mx-6'>
@@ -28,7 +28,7 @@ const Domains = () => {
         
         <mask id="vr">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg width="100%" height="100%" viewBox="-100.95 -5 100.858 130.858" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="-160.95 -30 100.858 180.858" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(-33.522 -376.821)">
                 <path d="M62.649,430.7a18.075,18.075,0,0,0,2.809,8.7l5.192,8.124a19.482,19.482,0,0,0,16.415,8.991h8.869a19.481,19.481,0,0,0,16.415-8.991l5.193-8.124a18.084,18.084,0,0,0,2.808-8.7" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                 <path d="M62.85,399.275a24.227,24.227,0,0,1,24.018-20.954h9.273a24.226,24.226,0,0,1,24.009,20.954" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
@@ -39,7 +39,7 @@ const Domains = () => {
                 <path d="M75.65,452.923v9.79a4.222,4.222,0,0,1-2.755,3.958l-29.946,11.1a12.148,12.148,0,0,0-7.927,11.391v4.021H147.978v-4.021a12.148,12.148,0,0,0-7.927-11.391l-29.946-11.1a4.222,4.222,0,0,1-2.755-3.958v-9.79" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
             </g>
           </svg>
-          <svg width="100%" height="100%" viewBox="80.28 -5 129.673 130.673" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="150.28 -30 129.673 180.673" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(-400.607 -375.914)">
                 <rect width="68.12" height="116.673" rx="6.232" transform="translate(402.107 377.414)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 <line x2="68.12" transform="translate(402.107 392.73)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -59,7 +59,7 @@ const Domains = () => {
 
         <mask id="ai">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"  viewBox="200 -48 1200 600" xmlSpace="preserve">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"  viewBox="450 -148 1200 800" xmlSpace="preserve">
 	          <g>
 	          	<g>
 	          		<path d="M409.55,70.347C374.452,24.326,321.356,0,256,0c-65.356,0-118.452,24.326-153.549,70.347
@@ -103,7 +103,7 @@ const Domains = () => {
 	          	</g>
 	          </g>
           </svg>
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  viewBox="-67 0 100 32" xmlSpace="preserve" width="100%" height="100%" >
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  viewBox="-96 -1 130 33" xmlSpace="preserve" width="100%" height="100%" >
 	          <path id="machine--learning--03_1_" d="M29.36,15.695v-3.389c0.575-0.159,1-0.681,1-1.305c0-0.75-0.61-1.36-1.36-1.36
 	          c-0.191,0-0.372,0.04-0.537,0.111l-2.365-2.956C26.261,6.572,26.36,6.298,26.36,6c0-0.75-0.61-1.36-1.36-1.36
 	          c-0.401,0-0.758,0.177-1.007,0.454l-3.659-1.83C20.351,3.179,20.36,3.091,20.36,3c0-0.75-0.61-1.36-1.36-1.36
@@ -159,7 +159,7 @@ const Domains = () => {
 
         <mask id="iot">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-8 -9 240 80" xmlSpace="preserve">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="25 -30 240 120" xmlSpace="preserve">
 	          <g>
 	          	<g>
 	          		<circle cx="5" cy="5" r="1" />
@@ -227,7 +227,7 @@ const Domains = () => {
 	          	</g>
 	          </g>
           </svg>
-          <svg width="100%" height="100%" viewBox="-42 -5 36 46" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+          <svg width="100%" height="100%" viewBox="-58 -13 36 61" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <title>internet-of-things-solid</title>
             <path d="M30.86,20.94a4.74,4.74,0,0,1,1.86.64h.05a15.12,15.12,0,0,0-.61-8.37,1,1,0,1,0-1.87.69A13.19,13.19,0,0,1,30.86,20.94Z"/>
             <path d="M26.33,28.58a13,13,0,0,1-6.07,2.82,1,1,0,1,0,.17,2h.18A15.16,15.16,0,0,0,27.82,30v-.07A4.7,4.7,0,0,1,26.33,28.58Z"/>
