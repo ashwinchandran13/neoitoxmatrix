@@ -7,6 +7,7 @@ import client5 from '../public/assets/images/client5.png';
 import client6 from '../public/assets/images/client6.png';
 import client7 from '../public/assets/images/client7.png';
 import client8 from '../public/assets/images/client8.png';
+import prod from '../public/assets/images/prod.jpg';
 
 export const headers:IHeaders[] = [
     {
@@ -46,13 +47,12 @@ export const clients = [
         image_path: client4,
         name: 'client4',
     },
-    
     {
         image_path: client6,
         name: 'client6',
     },
     {
-        image_path: client7,
+        image_path: client1,
         name: 'client7',
     },
     {
@@ -62,5 +62,28 @@ export const clients = [
     {
         image_path: client3,
         name: 'client3',
+    },
+]
+
+export const cases = [
+    {
+        title: 'Analystics App',
+        image_path: prod
+    },
+    {
+        title: 'Analystics App',
+        image_path: prod
+    },
+    {
+        title: 'Analystics App',
+        image_path: prod
+    },
+    {
+        title: 'Analystics App',
+        image_path: prod
+    },
+    {
+        title: 'Analystics App',
+        image_path: prod
     },
 ]
