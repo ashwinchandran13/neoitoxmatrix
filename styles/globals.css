@@ -41,6 +41,25 @@
   .mask-app {
     mask: url('#app')
   }
+
+  .top-border {
+    content: "";
+    top: -18px;
+    position: relative;
+    display: block;
+    border-top: 4px solid transparent;
+    transition: border-color 0.2s cubic-bezier(0, 0.42, 0.2, 0.99) 0s;
+  }
+
+  .top-border-active {
+    content: "";
+    top: -8px;
+    position: relative;
+    display: block;
+    border-top: 4px solid rgb(139, 224, 174);
+    transition: border-color 0.2s cubic-bezier(0, 0.42, 0.2, 0.99) 0s;
+  }
+
   
 }
 

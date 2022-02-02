@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import Mission from '../components/Mission';
 import Domains from '../components/Domains';
 import Client from '../components/Client';
-import Case from '../components/Case';
+import ProductJourney from '../components/ProductJourney';
 
 const index = () => {
   return (
@@ -17,7 +17,7 @@ const index = () => {
           <Domains />
         </div>
         <Client />
-        <Case />
+        <ProductJourney />
     </div>
   );
 };
