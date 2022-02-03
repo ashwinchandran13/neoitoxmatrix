@@ -6,6 +6,8 @@ import Mission from '../components/Mission';
 import Domains from '../components/Domains';
 import Client from '../components/Client';
 import ProductJourney from '../components/ProductJourney';
+import Faq from '../components/Faq';
+import Careers from '../components/Careers';
 
 const index = () => {
   return (
@@ -18,6 +20,8 @@ const index = () => {
         </div>
         <Client />
         <ProductJourney />
+        <Faq />
+        <Careers />
     </div>
   );
 };

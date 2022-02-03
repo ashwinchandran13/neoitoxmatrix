@@ -5,7 +5,7 @@ const Hero = () => {
       return location.href = '#mission'
   }
   return (
-    <header className='relative flex items-center justify-center h-screen overflow-hidden'
+    <header className='relative flex items-center justify-center lg:h-screen md:h-screen min-h-[65vh] overflow-hidden'
     // className="sticky top-0 z-50"
     >
       <div className='relative z-30 flex flex-col w-auto h-auto p-4 backdrop-blur-sm'>

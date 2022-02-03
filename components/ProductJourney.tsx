@@ -16,7 +16,7 @@ const ProductJourney = () => {
   }
 
   return (
-    <div className='h-screen p-8 mx-auto lg:max-w-6xl md:max-w-2xl '>
+    <div className='h-screen p-8 mx-auto mb-20 lg:max-w-6xl md:max-w-2xl'>
       <div className='md:mt-24 mt-10 lg:max-w-[30rem] md:max-w-xs mb-14'>
         <h3 className='text-2xl leading-tight text-white lg:text-6xl md:text-4xl'>Product Journey</h3>
       </div>

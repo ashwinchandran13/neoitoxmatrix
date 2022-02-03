@@ -17,13 +17,11 @@ module.exports = {
         },
         matrix_bg_color: {
           DEFAULT: '#1f452c'
-        },
-        radial_matrix_bg: {
-          DEFAULT: 'radial-gradient(100% 185.14% at 100% 100%, rgb(36, 151, 93) 0%, rgb(101, 222, 138) 100%)'
         }
       },
       backgroundImage: {
-        'matrix-circular': "radial-gradient(#39744d 10%, #000000 80%, #000000 100%)"
+        'matrix-circular': "radial-gradient(#39744d 10%, #000000 80%, #000000 100%)",
+        'radial_matrix_bg': "radial-gradient(100% 185.14% at 100% 100%, rgba(217, 102, 160, 1), rgba(156, 61, 117, 1))"
       },
     },
   },

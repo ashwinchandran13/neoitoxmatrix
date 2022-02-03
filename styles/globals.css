@@ -42,6 +42,10 @@
     mask: url('#app')
   }
 
+  .mask-neoito {
+    mask: url("#neoito");
+  }
+
   .top-border {
     content: "";
     top: -18px;

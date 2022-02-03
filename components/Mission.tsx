@@ -5,9 +5,9 @@ import team from '../public/assets/images/team.png';
 
 const Mission = () => {
   return (
-      <div className='mx-11 relative flex flex-col justify-center w-auto lg:h-[80vh] md:h-[60vh] sm:h-[40vh]' id='mission'>
+      <div className='p-8  relative flex flex-col justify-center w-auto lg:h-[80vh] md:h-[60vh] sm:h-[40vh]' id='mission'>
         <div className='flex justify-start place-items-center'>
-          <div className='ml-4 shadow-lg md:p-2 sm:p-1 h-fit w-fit backdrop-blur-3xl'>
+          <div className='shadow-lg md:p-2 sm:p-1 h-fit w-fit backdrop-blur-3xl'>
               <Image 
                 src={planning}
                 alt='planning'
@@ -17,7 +17,7 @@ const Mission = () => {
                 quality='100'
               />
           </div>
-          <div className='flex h-auto place-items-center md:p-2 sm:p-1 lg:w-1/2 backdrop-blur-lg'>
+          <div className='flex h-auto ml-4 place-items-center md:p-2 sm:p-1 lg:w-1/2 backdrop-blur-lg'>
             <h2 className='text-left text-white lg:text-3xl md:text-lg sm:text-xs'>
                 We help businesses solve their intricate challenges with the best of technology in half the time.  
             </h2>
@@ -31,7 +31,7 @@ const Mission = () => {
                   cutting-edge technology.            
               </h2>
             </div>
-            <div className='p-4 mr-4 shadow-lg md:p-2 sm:p-1 h-fit w-fit justify-self-center backdrop-blur-3xl'>
+            <div className='p-4 shadow-lg md:p-2 sm:p-1 h-fit w-fit justify-self-center backdrop-blur-3xl'>
                 <Image 
                   src={team}
                   alt='team'

@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 
 const Domains = () => {
 
-  const [maskStyle, setMaskStyle] = useState('mask-iot');
+  const [maskStyle, setMaskStyle] = useState('mask-security');
 
   return (
     <div className='box-border relative object-cover p-0 mx-0 lg:mx-6'>
       <video
         autoPlay
-        className='w-full object-cover lg:h-[78vh] md:h-[50vh] h-32 mx-auto overflow-hidden'
+        className='w-full object-cover min-h-[40vh] lg:h-[78vh] md:h-[50vh] h-32 mx-auto overflow-hidden'
         // className='w-auto bg-fixed bg-center bg-cover lg:h-auto md:h-3/4 lg:min-w-full lg:min-h-full max-w-none aspect-[6/2]'
         loop
         muted
         src='/assets/matrixRain.mp4'
       />
-      <svg className='absolute top-0 left-0 w-full lg:h-[78vh] md:h-[50vh] sm:h-full'>
+      <svg className='absolute top-0 left-0 w-full min-h-[40vh]  lg:h-[78vh] md:h-[50vh] sm:h-full'>
         <defs>
         <linearGradient id='radial-matrix-bg' x1="20%" y1="20%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="rgb(101, 222, 138)" stopOpacity="1" />
@@ -28,7 +28,7 @@ const Domains = () => {
         
         <mask id="vr">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg width="100%" height="100%" viewBox="-160.95 -30 100.858 180.858" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="-140.95 -30 100.858 180.858" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(-33.522 -376.821)">
                 <path d="M62.649,430.7a18.075,18.075,0,0,0,2.809,8.7l5.192,8.124a19.482,19.482,0,0,0,16.415,8.991h8.869a19.481,19.481,0,0,0,16.415-8.991l5.193-8.124a18.084,18.084,0,0,0,2.808-8.7" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                 <path d="M62.85,399.275a24.227,24.227,0,0,1,24.018-20.954h9.273a24.226,24.226,0,0,1,24.009,20.954" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
@@ -39,7 +39,7 @@ const Domains = () => {
                 <path d="M75.65,452.923v9.79a4.222,4.222,0,0,1-2.755,3.958l-29.946,11.1a12.148,12.148,0,0,0-7.927,11.391v4.021H147.978v-4.021a12.148,12.148,0,0,0-7.927-11.391l-29.946-11.1a4.222,4.222,0,0,1-2.755-3.958v-9.79" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
             </g>
           </svg>
-          <svg width="100%" height="100%" viewBox="150.28 -30 129.673 180.673" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="120.28 -30 129.673 180.673" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(-400.607 -375.914)">
                 <rect width="68.12" height="116.673" rx="6.232" transform="translate(402.107 377.414)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 <line x2="68.12" transform="translate(402.107 392.73)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -54,12 +54,12 @@ const Domains = () => {
                 <path d="M432.153,413.972l3.253,3.8-3.253,3.8" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
             </g>
           </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl ' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AR/VR</text>
+          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AR/VR</text>
         </mask>
 
         <mask id="ai">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"  viewBox="450 -148 1200 800" xmlSpace="preserve">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"  viewBox="400 -148 1200 800" xmlSpace="preserve">
 	          <g>
 	          	<g>
 	          		<path d="M409.55,70.347C374.452,24.326,321.356,0,256,0c-65.356,0-118.452,24.326-153.549,70.347
@@ -154,12 +154,12 @@ const Domains = () => {
 	          c-0.353,0-0.64-0.287-0.64-0.64s0.287-0.64,0.64-0.64s0.64,0.287,0.64,0.64S23.353,21.64,23,21.64z M29,17.64
 	          c-0.353,0-0.64-0.287-0.64-0.64c0-0.353,0.287-0.64,0.64-0.64s0.64,0.287,0.64,0.64C29.64,17.353,29.353,17.64,29,17.64z" />
           </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl ' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AI/ML</text>
+          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AI/ML</text>
         </mask>
 
         <mask id="iot">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="25 -30 240 120" xmlSpace="preserve">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="15 -30 240 120" xmlSpace="preserve">
 	          <g>
 	          	<g>
 	          		<circle cx="5" cy="5" r="1" />
@@ -227,7 +227,7 @@ const Domains = () => {
 	          	</g>
 	          </g>
           </svg>
-          <svg width="100%" height="100%" viewBox="-58 -13 36 61" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+          <svg width="100%" height="100%" viewBox="-50 -13 36 61" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <title>internet-of-things-solid</title>
             <path d="M30.86,20.94a4.74,4.74,0,0,1,1.86.64h.05a15.12,15.12,0,0,0-.61-8.37,1,1,0,1,0-1.87.69A13.19,13.19,0,0,1,30.86,20.94Z"/>
             <path d="M26.33,28.58a13,13,0,0,1-6.07,2.82,1,1,0,1,0,.17,2h.18A15.16,15.16,0,0,0,27.82,30v-.07A4.7,4.7,0,0,1,26.33,28.58Z"/>
@@ -237,13 +237,13 @@ const Domains = () => {
             <path d="M8.05,10A13,13,0,0,1,13.4,6.23a5,5,0,0,1-.17-2.07,15.15,15.15,0,0,0-6.7,4.51A1,1,0,0,0,8.05,10Z"/>
             <path d="M24.67,7.23A13.11,13.11,0,0,1,27.93,10a1,1,0,1,0,1.52-1.3,15,15,0,0,0-3.76-3.2,15.87,15.87,0,0,0-2.94-1.33,4.79,4.79,0,0,1-.15,2.06A14.1,14.1,0,0,1,24.67,7.23Z"/>
           </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl ' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>IOT</text>
+          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>IOT</text>
         </mask>
 
         <mask id="security">
           <rect fill='white' width="100%" height="100%" ></rect>
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
-          	 viewBox="0 -150 1650 650" xmlSpace="preserve">
+          	 viewBox="420 -150 650 650" xmlSpace="preserve">
           <g>
           	<path d="M156.834,62.487c-16.939,0-30.72,8.972-30.72,20s13.781,20,30.72,20s30.719-8.972,30.719-20S173.773,62.487,156.834,62.487
           		z"/>
@@ -281,44 +281,41 @@ const Domains = () => {
           	</g>
           </g>
           </svg>
-          <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="-82 -14 48 78" width="100%" height="100%">
-            <path d="M23,43l-2,4h6l-2-4H23z" />
-            <path d="M35.77,24.689c0.2-0.8,0.5-1.5,1-2.1c0.4-0.5,1.1-0.8,1.6-0.5s0.6,1,0.6,1.6c0,1,0,2.1,0,3.1c0,0.6,0,1.2-0.2,1.7	c-0.2,0.6-0.5,1.1-0.9,1.6c-0.3,0.4-0.6,0.8-0.9,1.2c-0.3,0.4-0.6,0.7-1,0.6c-0.1,0-0.3-0.1-0.4-0.3c-0.2-0.2,0.199-0.9-0.101-1.1	L35.77,24.689z M12.17,24.689c-0.2-0.8-0.5-1.5-1-2.1c-0.4-0.5-1.1-0.8-1.6-0.5s-0.6,1-0.6,1.6c0,1,0,2.1,0,3.1c0,0.6,0,1.2,0.2,1.7	c0.2,0.6,0.5,1.1,0.9,1.6c0.3,0.4,0.6,0.8,0.9,1.2c0.3,0.4,0.6,0.7,1,0.6c0.1,0,0.3-0.1,0.4-0.3c0.2-0.2-0.105-1.099,0.195-1.299	L12.17,24.689z" />
-            <path fill="#000000" d="M38,26c0,2.1-1,3-1,3v-2c-0.6,0-1-0.4-1-1s0.4-1,1-1S38,25.4,38,26z" />
-            <path fill="none" stroke="#000000" strokeMiterlimit="10" strokeWidth="3" d="M36.517,14.263v20.471	c0,2.047-8.347,8.773-10.434,8.773H21.91c-2.295,0-10.434-6.824-10.434-8.773V14.263" />
-            <path d="M27.82,35.028c-0.293,0.394-0.806,0.546-1.263,0.374c-0.557-0.21-1.426-0.438-2.576-0.438c-1.233,0-2.142,0.261-2.692,0.482	c-0.38,0.153-0.815,0.03-1.06-0.301l-0.064-0.087c-0.168-0.226-0.223-0.518-0.149-0.791s0.268-0.496,0.526-0.605	C21.297,33.347,22.453,33,23.981,33c1.538,0,2.7,0.322,3.454,0.63c0.26,0.106,0.458,0.329,0.533,0.603	C28.044,34.506,27.989,34.801,27.82,35.028z" />
-            <path d="M25.845,20.672c-0.123-0.329,0.043-0.695,0.372-0.819l6.573-2.468c0.436-0.164,0.923,0.057,1.086,0.493l0.11,0.293	c0.164,0.436-0.057,0.923-0.493,1.086l-7.168,2.691L25.845,20.672z" />
-            <path d="M14.413,19.223c-0.436-0.164-0.657-0.65-0.494-1.086l0.11-0.293c0.164-0.436,0.65-0.657,1.086-0.494l6.379,2.392	c0.436,0.164,0.657,0.65,0.494,1.086l-0.406,1.083L14.413,19.223z" />
-            <path fill="#000000" d="M16,22h16v1H16V22z" />
-            <path d="M14.3,20.5c0,0,1.4-0.4,3.3-0.5s4.1,0.2,4.1,0.2c0.8,0.2,1.5,0.7,1.3,1.5l-1,2.8c0,0-0.4,1.1-1.5,1.3	c-1.2,0.2-3.9,0.3-4.9,0.2c-0.8-0.1-1.7-0.1-2-1c-0.1-0.3-0.3-1.6-0.6-2.7C12.8,21.5,13.4,20.7,14.3,20.5z M33.7,20.5	c0,0-1.4-0.4-3.3-0.5s-4.1,0.2-4.1,0.2c-0.7,0.1-1.5,0.7-1.3,1.5l0.9,2.8c0,0,0.4,1.1,1.5,1.3c1.2,0.2,3.9,0.3,4.9,0.2	c0.8-0.1,1.7-0.1,2-1c0.1-0.3,0.3-1.6,0.6-2.7C35.2,21.5,34.6,20.7,33.7,20.5z" />
-            <ellipse cx="8.517" cy="26.489" rx="2.531" ry="2.505" />
-            <path fill="none" stroke="#000000" strokeMiterlimit="10" strokeWidth="2" d="M7.992,27.701v12.107	c0,1.388,0.764,2.635,2.001,3.236l4.422,2.146" />
-            <path fill="none" stroke="#000000" strokeMiterlimit="10" strokeWidth="3" d="M36.499,22.047c0,0,0-4.191,0-8.383	c0-6.334-4.559-9.314-8.939-9.314c-1.073-1.77-4.291-1.863-5.363-1.863c-3.665,0-10.727,3.074-10.727,12.108	c0,4.191,0,7.451,0,7.451" />
-            <path d="M22,1c-4.1,0-12,3.3-12,13c0,4.5,0,8,0,8l3,3v-6c0,0-0.872-8.065,4.628-9.865C18.945,8.71,20.01,9.85,20.01,11.05	c0,0.6,0.357,0.937,0.957,0.935l5.988-0.022c0.6-0.002,1-0.4,1-1l0.035-0.259c0-1.2,1.237-1.913,2.437-1.613	C36.128,10.691,35,19,35,19v6l3-3c0,0,0-4.5,0-9c0-6.8-5.1-10-10-10C26.8,1.1,23.2,1,22,1z" />
-            <line x1="32.29" x2="34.972" y1="39.715" y2="45.573" fill="none" stroke="#000000" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="3" />
-            <line x1="15.682" x2="13.024" y1="39.724" y2="45.53" fill="none" stroke="#000000" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="3" />
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl ' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>SECURITY</text>
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-250 -90 1 404.27" >
+			<g>
+			<path d="M196.926,55.171c-0.11-5.785-0.215-11.25-0.215-16.537c0-4.142-3.357-7.5-7.5-7.5c-32.075,0-56.496-9.218-76.852-29.01
+			c-2.912-2.832-7.546-2.831-10.457,0c-20.354,19.792-44.771,29.01-76.844,29.01c-4.142,0-7.5,3.358-7.5,7.5
+			c0,5.288-0.104,10.755-0.215,16.541c-1.028,53.836-2.436,127.567,87.331,158.682c0.796,0.276,1.626,0.414,2.456,0.414
+			c0.83,0,1.661-0.138,2.456-0.414C199.36,182.741,197.954,109.008,196.926,55.171z M107.131,198.812
+			c-76.987-27.967-75.823-89.232-74.79-143.351c0.062-3.248,0.122-6.396,0.164-9.482c30.04-1.268,54.062-10.371,74.626-28.285
+			c20.566,17.914,44.592,27.018,74.634,28.285c0.042,3.085,0.102,6.231,0.164,9.477C182.961,109.577,184.124,170.844,107.131,198.812
+			z" />
+			<path d="M132.958,81.082l-36.199,36.197l-15.447-15.447c-2.929-2.928-7.678-2.928-10.606,0c-2.929,2.93-2.929,7.678,0,10.607
+			l20.75,20.75c1.464,1.464,3.384,2.196,5.303,2.196c1.919,0,3.839-0.732,5.303-2.196l41.501-41.5
+			c2.93-2.929,2.93-7.678,0.001-10.606C140.636,78.154,135.887,78.153,132.958,81.082z" />
+			</g>
+		  </svg>
+          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-5xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>SECURITY</text>
         </mask>
 
         <mask id="cg">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg id="Layer_1" width="100%" height="100%" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="500 -180 1241.85 911.85">
+          <svg id="Layer_1" width="100%" height="100%" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="1000 -180 85 911.85">
             <path d="M456,.15,246.9,54.64,216,107.73l-62.8-.46L.15,256.1l153,148.82,62.76-.48,31,53.07L456,512l56-203.26L480.17,256.1,512,203.45ZM221,116.27,381,76.3,289.14,231H105.51Zm0,279.62L105.51,281.22H289.14l91.8,154.64ZM425.7,410.72,333.85,256.1,425.7,101.41,470,256.1Z" transform="translate(-0.15 -0.15)" />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-42 -9 24 44">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-38 -9 24 44">
             <path d="m12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12c0-6.627-5.373-12-12-12zm0 1.846c5.595.007 10.128 4.545 10.128 10.141 0 5.601-4.54 10.141-10.141 10.141s-10.141-4.54-10.141-10.141c0-2.8 1.135-5.335 2.97-7.17 1.837-1.835 4.374-2.97 7.176-2.97h.007zm0 2.77c-4.392.774-8.308 4.824-8.308 9.23 2.149-3.794 3.584-4.067 3.981-4.067s.606.206.606.663v5.654c0 .703-1.366.588-1.818.519 1.67 2.485 5.539 2.77 5.539 2.77l1.846-1.846 1.846.923c2.914-1.334 4.615-4.19 4.615-4.615-.701.868-1.646 1.515-2.731 1.836l-.039.01c-.245 0-.923-.126-.923-.462v-6.693c0-.581 1.342-2.354 1.846-3-3.332.873-4.298 2.394-4.298 2.394s-.253-.548-1.24-.548c.501.473.838 1.114.922 1.832l.001.014v5.654c-.525.373-1.144.653-1.813.801l-.034.006c-.64 0-.952-.26-.952-.75s.029-6.634.029-6.634-.923.339-.923-1.558c0-.949 1.846-2.135 1.846-2.135z" />
           </svg>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl ' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>COMPUTER</text>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl ' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>GRAPHICS</text>
+          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-6xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>COMPUTER</text>
+          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-6xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>GRAPHICS</text>
         </mask>
 
         <mask id="systemProgramming">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg width="100%" height="100%" viewBox="90 -24 36 86" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+          <svg width="100%" height="100%" viewBox="94 -24 16 86" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <path d="M32,5H4A2,2,0,0,0,2,7V29a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V7A2,2,0,0,0,32,5ZM6.8,15.81V13.17l10,4.59v2.08l-10,4.59V21.78l6.51-3ZM23.4,25.4H17V23h6.4ZM4,9.2V7H32V9.2Z" className="clr-i-solid clr-i-solid-path-1"></path>
           </svg>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-1000 -330 5.787 1200.787"  xmlSpace="preserve">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-1500 -330 1200 1200"  xmlSpace="preserve">
             <g>
             	<path d="M326.629,212.262c23.443,0,42.531-19.066,42.531-42.528c0-23.452-19.088-42.519-42.531-42.519
             		c-23.459,0-42.512,19.066-42.512,42.519C284.117,193.196,303.17,212.262,326.629,212.262z"/>
@@ -365,16 +362,16 @@ const Domains = () => {
             		C125.633,280.38,109.631,264.397,109.631,244.692z"/>
             </g>
           </svg>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl ' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>SYSTEM</text>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl ' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>PROGRAMMING</text>
+          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>SYSTEM</text>
+          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>PROGRAMMING</text>
         </mask>
 
         <mask id="app">
           <rect fill='white' width="100%" height="100%" ></rect>
-          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -75 622.88 250.9" width="100%" height="100%">
+          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="230 -75 100 250.9" width="100%" height="100%">
             <path d="M3.34,0h116.2a3.35,3.35,0,0,1,3.34,3.34v77a3.35,3.35,0,0,1-3.34,3.34H3.34A3.35,3.35,0,0,1,0,80.32v-77A3.35,3.35,0,0,1,3.34,0ZM13.49,63.91a2.59,2.59,0,1,1,0-5.17H52.94a2.59,2.59,0,1,1,0,5.17Zm.15-13.28a2.59,2.59,0,0,1,0-5.17H42.4a2.59,2.59,0,0,1,0,5.17ZM13.49,37.4a2.59,2.59,0,1,1,0-5.17H33.85a2.59,2.59,0,0,1,0,5.17Zm0-13.26a2.59,2.59,0,1,1,0-5.17H25.3a2.59,2.59,0,0,1,0,5.17Zm97,26.19v6.44l-13.23,7.5v-7.5l8.52-3.24-8.52-3.2v-7.5l13.23,7.5Zm-22.92,16H82l7-27.11h5.63l-7,27.11Zm-9.41-16-8.53,3.2,8.53,3.24v7.5L65,56.77V50.33l13.24-7.5v7.5Zm5.67-38.68v3.67A1.83,1.83,0,0,1,82,17.15H79a14.43,14.43,0,0,1-1.6,3.5l2,2a1.83,1.83,0,0,1,0,2.58l-2.71,2.71a1.83,1.83,0,0,1-2.58,0l-2.18-2.18a14.43,14.43,0,0,1-3.6,1.35v2.82a1.84,1.84,0,0,1-1.83,1.83H62.63a1.84,1.84,0,0,1-1.83-1.83V26.85a14.2,14.2,0,0,1-3.5-1.59l-2,2a1.82,1.82,0,0,1-2.59,0L50,24.55A1.84,1.84,0,0,1,50,22l2.18-2.17a14.5,14.5,0,0,1-1.35-3.61H48a1.83,1.83,0,0,1-1.83-1.83v-2.7H3.09V70.84a3,3,0,0,0,3,3H116.85a3,3,0,0,0,3-3V11.65Zm-11.42,0H57.62a7.71,7.71,0,0,0-.11,1.28,7.52,7.52,0,0,0,15,0,7.71,7.71,0,0,0-.1-1.28Zm41.79-6.73a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm-13.44,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm6.72,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2ZM46.29,88.27h30.3c.08,5.24,2.24,9.94,8.09,13.63H38.2c4.71-3.41,8.11-7.54,8.09-13.63Z" />
           </svg>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-900 -250 202.664 1002.664" xmlSpace="preserve">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-850 -250 500 1002.664" xmlSpace="preserve">
             <g>
             	<g>
             		<g>
@@ -397,8 +394,8 @@ const Domains = () => {
             	</g>
               </g>
           </svg>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl ' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>WEB/MOBILE</text>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl ' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>APP</text>
+          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>WEB/MOBILE</text>
+          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>APP</text>
         </mask>
         
         <rect width="100%" fill="url('#radial-matrix-bg')" height="100%" className={maskStyle}></rect>

@@ -1,4 +1,4 @@
-import { IClients, IHeaders, IProducts } from "../type"
+import { IClients, IFaq, IHeaders, IProducts } from "../type"
 
 import client1 from '../public/assets/images/client1.png';
 import client2 from '../public/assets/images/client2.png';
@@ -116,4 +116,25 @@ export const products:IProducts[] = [
         description: 'A new rules-based data structure system ingests the Houdini point cloud of the city and enables the huge dataset to be managed at speed in UE5. ',
         image_path: dataAnalystics
     },
+]
+
+export const faqs:IFaq[] = [
+    {
+        title: 'The A-Team',
+        subheading: 'Swimming is awesome, but we make boats - the same way we build solutions that dwarf our challenges. ',
+        description: 'Our assorted team of industry leaders envision what\'s needed tomorrow and simplifies them today. Being multidisciplinary in their expertise, developing solutions never feels like work at all. ',
+        buttons: ['Meet Our Team', 'What the Tech']
+    },
+    {
+        title: 'Wanna know how we do it?',
+        subheading: 'We present you the secret sauce',
+        description: 'Discover our all-encompassing roadmap for each department and the progressive role you play in it. You\'ll also get a clear sense of our creative collaboration among teams to come up with world-class products',
+        buttons: ['Play Book']
+    },
+    {
+        title: 'Community Engement',
+        subheading: 'Doing our share by giving it back',
+        description: 'Neoito Learning program is for programmers and graduates who have the intrest to learn the latest web development skills',
+        buttons: ['Nullcast', 'Open Source']
+    }
 ]
