@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import React from 'react';
+import { slideInUp } from '../animations';
 import { headers } from '../constants/data';
 
 const FooterBar = () => {
@@ -6,7 +8,7 @@ const FooterBar = () => {
         return location.href = '#navbar'
     }
     return (
-        <div className='w-full px-4 py-6 mt-10 md:h-1/2 md:mt-20 bg-matrix_green_header md:px-64 md:py-10'>
+        <motion.div variants={slideInUp} whileInView="animate" initial="initial" exit="exit" className='w-full px-4 py-6 mt-10 md:h-1/2 md:mt-20 bg-matrix_green_header md:px-64 md:py-10'>
             <div className="grid grid-cols-2 place-content-center">
                 <div className='flex col-span-1 justify-self-start'>
                     <div className='duration-500 cursor-pointer hover:shadow-lg hover:shadow-black/30 hover:-translate-y-1'>
@@ -57,8 +59,8 @@ const FooterBar = () => {
                     </ul>
                 </div>
             </div>
-            <div className='flex pt-9'>
-                <h5 className='text-white'>Theme Created by&nbsp;
+            <div className='flex flex-row-reverse py-4'>
+                <h5 className='text-xs text-white md:base'>Theme Created by&nbsp;
                 <a href="https://ashwin-chandran-portfolio.vercel.app" className='hover:text-matrix_green_btn'>Ashwin Chandran</a>&nbsp;for Neoito
                 </h5>
             </div>
@@ -72,7 +74,7 @@ const FooterBar = () => {
                 <h5 className='text-2xl text-white font-matrixCode'>X</h5>
                 <h5 className='text-3xl text-white font-matrixFont'>THE MATRIX</h5>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

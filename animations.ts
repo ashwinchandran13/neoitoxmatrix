@@ -11,9 +11,10 @@ export const easeIn = {
         }
     },
     exit: {
+        opacity: 0,
         transition: {
-            delay: 0.2,
-            duration: 1
+            delay: 0.1,
+            ease: 'easeInOut'
         }
     }
 }
@@ -39,6 +40,8 @@ export const stagger = {
         transition: {
             staggerChildren: 0.2
         }
+    },
+    exit: {
     }
 }
 
@@ -56,6 +59,13 @@ export const slideInRight = {
         opacity: 1,
         transition: {
             duration: 1
+        }
+    },
+    exit: {
+        x: 50,
+        opacity: 0,
+        transition: {
+            duration: 0.5
         }
     }
 }
