@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import React, { FunctionComponent } from 'react';
+import { fadeInUp, viewPort } from '../animations';
 import { Product } from '../type';
 
 export const NavItem:FunctionComponent<{value: Product, handleFilterProduct: Function, active: string}> = ({value, handleFilterProduct, active}) => {
@@ -11,14 +13,14 @@ export const NavItem:FunctionComponent<{value: Product, handleFilterProduct: Fun
 
 const ProductNavbar:FunctionComponent<{handleFilterProduct: Function, active: string}> = (props) => {
   return (
-      <div className='flex justify-between py-2 space-x-4 overflow-x-auto list-none border-t-2 border-white/50'>
+      <motion.div variants={fadeInUp} whileInView="animate" initial="initial" viewport={viewPort} className='flex justify-between py-2 space-x-4 overflow-x-auto list-none border-t-2 border-white/50'>
         <NavItem value='Enterprise Architecture' {...props}/>
         <NavItem value='System Programming' {...props}/>
         <NavItem value='Web & Mobile' {...props}/>
         <NavItem value='Machine Learning' {...props}/>
         <NavItem value='3D Rendering' {...props}/>
         <NavItem value='Data Analytics' {...props}/>
-      </div>
+      </motion.div>
   );
 };
 

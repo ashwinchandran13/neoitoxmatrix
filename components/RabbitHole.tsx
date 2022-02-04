@@ -36,13 +36,13 @@ const RabbitHole: FunctionComponent<{ setScreen: Function }> = ({ setScreen }) =
                 </svg>
             </div>
             <div className='flex flex-col col-span-1 p-14 justify-self-center'>
-                <h3 className='text-2xl leading-tight text-center text-black lg:text-6xl md:text-4xl'>Are you the one?</h3>
-                <div className='mt-12 text-lg leading-loose tracking-wide text-justify text-black lg:text-4xl md:text-xl'>
+                <h3 className='text-2xl leading-tight text-center text-black md:text-5xl'>Are you the one?</h3>
+                <div className='mt-12 text-lg leading-loose tracking-normal text-justify text-black md:text-xl'>
                     <p>We're stunned by the minds who took us forward. We're even more amused to where you could take us. Join the Neoito cause today.</p>
                 </div>
                 <div className='grid grid-cols-2 gap-6 mt-10'>
-                    <button className='px-8 py-3 font-semibold text-white shadow-lg shadow-matrix_green_header/30 hover:shadow-matrix_green_btn/30 bg-matrix_green_header hover:bg-matrix_green_btn hover:text-black'>Work With Us Neo</button>
-                    <button className='px-8 py-3 font-semibold text-black border-4 border-black shadow-lg shadow-black/30 hover:bg-black hover:text-white' onClick={() => setScreen('pill screen')}>Not the one?</button>
+                    <button className='px-8 py-3 text-xs font-semibold text-white shadow-lg md:text-base shadow-matrix_green_header/30 hover:shadow-matrix_green_btn/30 bg-matrix_green_header hover:bg-matrix_green_btn hover:text-black'>Work With Us Neo</button>
+                    <button className='px-8 py-3 text-xs font-semibold text-black border-4 border-black shadow-lg md:text-base shadow-black/30 hover:bg-black hover:text-white' onClick={() => setScreen('pill screen')}>Not the one?</button>
                 </div>
                 {/* <div className='flex flex-row items-center justify-center space-x-10'>
                     <button className='self-center px-8 py-3 mt-12 font-semibold text-white shadow-lg shadow-matrix_green_header/30 hover:shadow-matrix_green_btn/30 bg-matrix_green_header hover:bg-matrix_green_btn hover:text-black'>Work With Us Neo</button>

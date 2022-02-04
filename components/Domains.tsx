@@ -1,68 +1,72 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { slideInRight, slideInUp, stagger, viewPort } from '../animations';
 
 const Domains = () => {
 
-  const [maskStyle, setMaskStyle] = useState('mask-security');
+	const [maskStyle, setMaskStyle] = useState('mask-bg');
+	const [maskRStyle, setMaskRStyle] = useState('mask-title');
 
-  return (
-    <div className='box-border relative object-cover p-0 mx-0 lg:mx-6'>
-      <video
-        autoPlay
-        className='w-full object-cover min-h-[40vh] lg:h-[78vh] md:h-[50vh] h-32 mx-auto overflow-hidden'
-        // className='w-auto bg-fixed bg-center bg-cover lg:h-auto md:h-3/4 lg:min-w-full lg:min-h-full max-w-none aspect-[6/2]'
-        loop
-        muted
-        src='/assets/matrixRain.mp4'
-      />
-      <svg className='absolute top-0 left-0 w-full min-h-[40vh]  lg:h-[78vh] md:h-[50vh] sm:h-full'>
-        <defs>
-        <linearGradient id='radial-matrix-bg' x1="20%" y1="20%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="rgb(101, 222, 138)" stopOpacity="1" />
-          <stop offset="100%" stopColor="rgb(36, 151, 93)" stopOpacity="1" />
-        </linearGradient>
-        </defs>
-        <mask id='mask'>
-          <rect fill='white' width="100%" height="100%"></rect>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-8xl ' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>DOMAINS</text>
-        </mask>
-        
-        <mask id="vr">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg width="100%" height="100%" viewBox="-140.95 -30 100.858 180.858" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(-33.522 -376.821)">
-                <path d="M62.649,430.7a18.075,18.075,0,0,0,2.809,8.7l5.192,8.124a19.482,19.482,0,0,0,16.415,8.991h8.869a19.481,19.481,0,0,0,16.415-8.991l5.193-8.124a18.084,18.084,0,0,0,2.808-8.7" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M62.85,399.275a24.227,24.227,0,0,1,24.018-20.954h9.273a24.226,24.226,0,0,1,24.009,20.954" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M57.446,402.162v25.429a2.891,2.891,0,0,0,2.639,2.88l16.157,1.414a6.482,6.482,0,0,0,5.263-1.993l6.588-6.934a4.7,4.7,0,0,1,6.814,0l6.588,6.934a6.48,6.48,0,0,0,5.263,1.993l16.157-1.414a2.891,2.891,0,0,0,2.639-2.88V402.162a2.892,2.892,0,0,0-2.891-2.891H60.337A2.891,2.891,0,0,0,57.446,402.162Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M115,405.281H68a3.087,3.087,0,1,0,0,6.175H115a3.087,3.087,0,1,0,0-6.175Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M53.432,408.369a.518.518,0,0,0-.518.518V422.9a.518.518,0,0,0,.518.518h4.014V408.369Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M129.568,423.422a.518.518,0,0,0,.518-.518V408.887a.518.518,0,0,0-.518-.518h-4.014v15.053Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M75.65,452.923v9.79a4.222,4.222,0,0,1-2.755,3.958l-29.946,11.1a12.148,12.148,0,0,0-7.927,11.391v4.021H147.978v-4.021a12.148,12.148,0,0,0-7.927-11.391l-29.946-11.1a4.222,4.222,0,0,1-2.755-3.958v-9.79" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-            </g>
-          </svg>
-          <svg width="100%" height="100%" viewBox="120.28 -30 129.673 180.673" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(-400.607 -375.914)">
-                <rect width="68.12" height="116.673" rx="6.232" transform="translate(402.107 377.414)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <line x2="68.12" transform="translate(402.107 392.73)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <line x2="68.12" transform="translate(402.107 478.77)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <line x2="6.249" transform="translate(429.596 385.395)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <line x2="1.607" transform="translate(441.131 385.395)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <line x2="9.789" transform="translate(431.272 486.405)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <path d="M450.229,449.409V433.171l-14.062-8.119L422.1,433.171v16.238l14.062,8.119Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M422.1,433.171l14.062,8.119,14.062-8.119" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <line y1="16.238" transform="translate(436.167 441.29)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <path d="M440.272,417.927c13.4,1.065,23.678,7.26,23.678,14.743,0,8.231-12.439,14.9-27.783,14.9s-27.784-6.673-27.784-14.9c0-8.1,12.031-14.683,27.024-14.9" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                <path d="M432.153,413.972l3.253,3.8-3.253,3.8" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-            </g>
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AR/VR</text>
-        </mask>
+	return (
+		<div className='box-border relative object-cover md:mx-6'>
+			<motion.div whileInView="animate" initial="initial" viewport={viewPort} variants={slideInUp} className='hidden h-[72vh] p-0 md:flex'>
+				<video
+					autoPlay
+					className='object-cover md:h-[72vh] w-full h-full mx-auto overflow-hidden'
+					// className='w-auto bg-fixed bg-center bg-cover lg:h-auto md:h-3/4 lg:min-w-full lg:min-h-full max-w-none aspect-[6/2]'
+					loop
+					muted
+					src='/assets/matrixRain.mp4'
+				/>
+				<svg className='absolute top-0 md:h-[72vh] left-0 w-full h-full '>
+					<defs>
+						<linearGradient id='radial-matrix-bg' x1="20%" y1="20%" x2="100%" y2="100%">
+							<stop offset="0%" stopColor="rgb(101, 222, 138)" stopOpacity="1" />
+							<stop offset="100%" stopColor="rgb(36, 151, 93)" stopOpacity="1" />
+						</linearGradient>
+					</defs>
+					<mask id='mask'>
+						<rect fill='white' width="100%" height="100%"></rect>
+						<text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-8xl ' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>DOMAINS</text>
+					</mask>
 
-        <mask id="ai">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"  viewBox="400 -148 1200 800" xmlSpace="preserve">
-	          <g>
-	          	<g>
-	          		<path d="M409.55,70.347C374.452,24.326,321.356,0,256,0c-65.356,0-118.452,24.326-153.549,70.347
+					<mask id="vr">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg width="100%" height="100%" viewBox="-140.95 -30 100.858 180.858" xmlns="http://www.w3.org/2000/svg">
+							<g transform="translate(-33.522 -376.821)">
+								<path d="M62.649,430.7a18.075,18.075,0,0,0,2.809,8.7l5.192,8.124a19.482,19.482,0,0,0,16.415,8.991h8.869a19.481,19.481,0,0,0,16.415-8.991l5.193-8.124a18.084,18.084,0,0,0,2.808-8.7" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M62.85,399.275a24.227,24.227,0,0,1,24.018-20.954h9.273a24.226,24.226,0,0,1,24.009,20.954" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M57.446,402.162v25.429a2.891,2.891,0,0,0,2.639,2.88l16.157,1.414a6.482,6.482,0,0,0,5.263-1.993l6.588-6.934a4.7,4.7,0,0,1,6.814,0l6.588,6.934a6.48,6.48,0,0,0,5.263,1.993l16.157-1.414a2.891,2.891,0,0,0,2.639-2.88V402.162a2.892,2.892,0,0,0-2.891-2.891H60.337A2.891,2.891,0,0,0,57.446,402.162Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M115,405.281H68a3.087,3.087,0,1,0,0,6.175H115a3.087,3.087,0,1,0,0-6.175Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M53.432,408.369a.518.518,0,0,0-.518.518V422.9a.518.518,0,0,0,.518.518h4.014V408.369Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M129.568,423.422a.518.518,0,0,0,.518-.518V408.887a.518.518,0,0,0-.518-.518h-4.014v15.053Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M75.65,452.923v9.79a4.222,4.222,0,0,1-2.755,3.958l-29.946,11.1a12.148,12.148,0,0,0-7.927,11.391v4.021H147.978v-4.021a12.148,12.148,0,0,0-7.927-11.391l-29.946-11.1a4.222,4.222,0,0,1-2.755-3.958v-9.79" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+							</g>
+						</svg>
+						<svg width="100%" height="100%" viewBox="120.28 -30 129.673 180.673" xmlns="http://www.w3.org/2000/svg">
+							<g transform="translate(-400.607 -375.914)">
+								<rect width="68.12" height="116.673" rx="6.232" transform="translate(402.107 377.414)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<line x2="68.12" transform="translate(402.107 392.73)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<line x2="68.12" transform="translate(402.107 478.77)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<line x2="6.249" transform="translate(429.596 385.395)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<line x2="1.607" transform="translate(441.131 385.395)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<line x2="9.789" transform="translate(431.272 486.405)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<path d="M450.229,449.409V433.171l-14.062-8.119L422.1,433.171v16.238l14.062,8.119Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M422.1,433.171l14.062,8.119,14.062-8.119" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<line y1="16.238" transform="translate(436.167 441.29)" strokeWidth="3" stroke="#000" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+								<path d="M440.272,417.927c13.4,1.065,23.678,7.26,23.678,14.743,0,8.231-12.439,14.9-27.783,14.9s-27.784-6.673-27.784-14.9c0-8.1,12.031-14.683,27.024-14.9" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								<path d="M432.153,413.972l3.253,3.8-3.253,3.8" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+							</g>
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AR/VR</text>
+					</mask>
+
+					<mask id="ai">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="400 -148 1200 800" xmlSpace="preserve">
+							<g>
+								<g>
+									<path d="M409.55,70.347C374.452,24.326,321.356,0,256,0c-65.356,0-118.452,24.326-153.549,70.347
 	          		c-30.209,39.611-46.177,93.382-46.177,155.5c0,67.981,19.424,137.928,53.291,191.905C147.701,478.529,199.706,512,256,512
 	          		s108.3-33.471,146.434-94.248c33.868-53.977,53.291-123.923,53.291-191.905C455.726,163.729,439.758,109.958,409.55,70.347z
 	          		 M119.775,365.971l38.521,6.948l9.294,65.003C148.515,418.707,132.353,393.859,119.775,365.971z M239.304,381.505h-33.776v33.391
@@ -74,37 +78,37 @@ const Domains = () => {
 	          		l-17.406,121.741c-10.766,5.505-22.112,9.335-33.96,11.206v-62.386h33.776v-33.391h-33.776V169.71l50.472-28.571V45.147
 	          		c12.892,5.1,24.648,11.846,35.224,20.241v87.596h33.391v-49.54c19.785,32.249,30.551,75.042,30.551,122.403
 	          		c0,34.609-5.736,70.359-16.248,103.693L324.061,344.334z" />
-	          	</g>
-	          </g>
-	          <g>
-	          	<g>
-	          		<path d="M343.335,203.788c-29.668,0-53.806,24.137-53.806,53.806c0,29.669,24.138,53.807,53.806,53.807
+								</g>
+							</g>
+							<g>
+								<g>
+									<path d="M343.335,203.788c-29.668,0-53.806,24.137-53.806,53.806c0,29.669,24.138,53.807,53.806,53.807
 	          		c29.669,0,53.807-24.137,53.807-53.807C397.142,227.926,373.004,203.788,343.335,203.788z M343.335,278.009
 	          		c-11.256,0-20.414-9.158-20.414-20.415c0-11.256,9.158-20.414,20.414-20.414s20.415,9.158,20.415,20.414
 	          		C363.75,268.851,354.591,278.009,343.335,278.009z" />
-	          	</g>
-	          </g>
-	          <g>
-	          	<g>
-	          		<circle cx="343.329" cy="257.592" r="13.866" />
-	          	</g>
-	          </g>
-	          <g>
-	          	<g>
-	          		<path d="M168.665,203.788c-29.668,0-53.806,24.138-53.806,53.806c0,29.669,24.137,53.807,53.806,53.807
+								</g>
+							</g>
+							<g>
+								<g>
+									<circle cx="343.329" cy="257.592" r="13.866" />
+								</g>
+							</g>
+							<g>
+								<g>
+									<path d="M168.665,203.788c-29.668,0-53.806,24.138-53.806,53.806c0,29.669,24.137,53.807,53.806,53.807
 	          		c29.669,0,53.807-24.138,53.807-53.807C222.472,227.926,198.334,203.788,168.665,203.788z M168.665,278.009
 	          		c-11.256,0-20.414-9.158-20.414-20.415c0-11.256,9.158-20.414,20.414-20.414c11.257,0,20.415,9.158,20.415,20.414
 	          		C189.08,268.851,179.922,278.009,168.665,278.009z" />
-	          	</g>
-	          </g>
-	          <g>
-	          	<g>
-	          		<circle cx="168.659" cy="257.592" r="13.866" />
-	          	</g>
-	          </g>
-          </svg>
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  viewBox="-96 -1 130 33" xmlSpace="preserve" width="100%" height="100%" >
-	          <path id="machine--learning--03_1_" d="M29.36,15.695v-3.389c0.575-0.159,1-0.681,1-1.305c0-0.75-0.61-1.36-1.36-1.36
+								</g>
+							</g>
+							<g>
+								<g>
+									<circle cx="168.659" cy="257.592" r="13.866" />
+								</g>
+							</g>
+						</svg>
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="-90 -1 130 33" xmlSpace="preserve" width="100%" height="100%" >
+							<path id="machine--learning--03_1_" d="M29.36,15.695v-3.389c0.575-0.159,1-0.681,1-1.305c0-0.75-0.61-1.36-1.36-1.36
 	          c-0.191,0-0.372,0.04-0.537,0.111l-2.365-2.956C26.261,6.572,26.36,6.298,26.36,6c0-0.75-0.61-1.36-1.36-1.36
 	          c-0.401,0-0.758,0.177-1.007,0.454l-3.659-1.83C20.351,3.179,20.36,3.091,20.36,3c0-0.75-0.61-1.36-1.36-1.36
 	          c-0.625,0-1.147,0.425-1.306,1h-4.389c-0.159-0.575-0.681-1-1.305-1c-0.75,0-1.36,0.61-1.36,1.36c0,0.091,0.01,0.179,0.027,0.264
@@ -153,56 +157,56 @@ const Domains = () => {
 	          c0,0.353-0.287,0.64-0.64,0.64s-0.64-0.287-0.64-0.64s0.287-0.64,0.64-0.64S23.64,28.647,23.64,29z M23,21.64
 	          c-0.353,0-0.64-0.287-0.64-0.64s0.287-0.64,0.64-0.64s0.64,0.287,0.64,0.64S23.353,21.64,23,21.64z M29,17.64
 	          c-0.353,0-0.64-0.287-0.64-0.64c0-0.353,0.287-0.64,0.64-0.64s0.64,0.287,0.64,0.64C29.64,17.353,29.353,17.64,29,17.64z" />
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AI/ML</text>
-        </mask>
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>AI/ML</text>
+					</mask>
 
-        <mask id="iot">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="15 -30 240 120" xmlSpace="preserve">
-	          <g>
-	          	<g>
-	          		<circle cx="5" cy="5" r="1" />
-	          		<circle cx="55" cy="5" r="1" />
-	          		<circle cx="5" cy="55" r="1" />
-	          		<circle cx="11" cy="56" r="1" />
-	          		<circle cx="15" cy="56" r="1" />
-	          		<circle cx="19" cy="56" r="1" />
-	          		<circle cx="23" cy="56" r="1" />
-	          		<circle cx="38" cy="39" r="1" />
-	          		<circle cx="34" cy="39" r="1" />
-	          		<circle cx="36" cy="36" r="1" />
-	          		<circle cx="30" cy="39" r="1" />
-	          		<circle cx="26" cy="39" r="1" />
-	          		<circle cx="32" cy="36" r="1" />
-	          		<circle cx="28" cy="36" r="1" />
-	          		<circle cx="22" cy="39" r="1" />
-	          		<circle cx="24" cy="36" r="1" />
-	          		<circle cx="38" cy="33" r="1" />
-	          		<circle cx="34" cy="33" r="1" />
-	          		<circle cx="36" cy="30" r="1" />
-	          		<circle cx="30" cy="33" r="1" />
-	          		<circle cx="26" cy="33" r="1" />
-	          		<circle cx="32" cy="30" r="1" />
-	          		<circle cx="28" cy="30" r="1" />
-	          		<circle cx="22" cy="33" r="1" />
-	          		<circle cx="24" cy="30" r="1" />
-	          		<circle cx="38" cy="27" r="1" />
-	          		<circle cx="34" cy="27" r="1" />
-	          		<circle cx="36" cy="24" r="1" />
-	          		<circle cx="30" cy="27" r="1" />
-	          		<circle cx="26" cy="27" r="1" />
-	          		<circle cx="32" cy="24" r="1" />
-	          		<circle cx="28" cy="24" r="1" />
-	          		<circle cx="22" cy="27" r="1" />
-	          		<circle cx="24" cy="24" r="1" />
-	          		<circle cx="38" cy="21" r="1" />
-	          		<circle cx="34" cy="21" r="1" />
-	          		<circle cx="30" cy="21" r="1" />
-	          		<circle cx="26" cy="21" r="1" />
-	          		<circle cx="22" cy="21" r="1" />
-	          		<circle cx="55" cy="55" r="1" />
-	          		<path d="M51,25c0.552,0,1-0.447,1-1s-0.448-1-1-1h-2v-2h-4v-1.643C45,16.955,43.045,15,40.643,15H39v-4h-2V9c0-0.553-0.448-1-1-1
+					<mask id="iot">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="15 -30 240 120" xmlSpace="preserve">
+							<g>
+								<g>
+									<circle cx="5" cy="5" r="1" />
+									<circle cx="55" cy="5" r="1" />
+									<circle cx="5" cy="55" r="1" />
+									<circle cx="11" cy="56" r="1" />
+									<circle cx="15" cy="56" r="1" />
+									<circle cx="19" cy="56" r="1" />
+									<circle cx="23" cy="56" r="1" />
+									<circle cx="38" cy="39" r="1" />
+									<circle cx="34" cy="39" r="1" />
+									<circle cx="36" cy="36" r="1" />
+									<circle cx="30" cy="39" r="1" />
+									<circle cx="26" cy="39" r="1" />
+									<circle cx="32" cy="36" r="1" />
+									<circle cx="28" cy="36" r="1" />
+									<circle cx="22" cy="39" r="1" />
+									<circle cx="24" cy="36" r="1" />
+									<circle cx="38" cy="33" r="1" />
+									<circle cx="34" cy="33" r="1" />
+									<circle cx="36" cy="30" r="1" />
+									<circle cx="30" cy="33" r="1" />
+									<circle cx="26" cy="33" r="1" />
+									<circle cx="32" cy="30" r="1" />
+									<circle cx="28" cy="30" r="1" />
+									<circle cx="22" cy="33" r="1" />
+									<circle cx="24" cy="30" r="1" />
+									<circle cx="38" cy="27" r="1" />
+									<circle cx="34" cy="27" r="1" />
+									<circle cx="36" cy="24" r="1" />
+									<circle cx="30" cy="27" r="1" />
+									<circle cx="26" cy="27" r="1" />
+									<circle cx="32" cy="24" r="1" />
+									<circle cx="28" cy="24" r="1" />
+									<circle cx="22" cy="27" r="1" />
+									<circle cx="24" cy="24" r="1" />
+									<circle cx="38" cy="21" r="1" />
+									<circle cx="34" cy="21" r="1" />
+									<circle cx="30" cy="21" r="1" />
+									<circle cx="26" cy="21" r="1" />
+									<circle cx="22" cy="21" r="1" />
+									<circle cx="55" cy="55" r="1" />
+									<path d="M51,25c0.552,0,1-0.447,1-1s-0.448-1-1-1h-2v-2h-4v-1.643C45,16.955,43.045,15,40.643,15H39v-4h-2V9c0-0.553-0.448-1-1-1
 	          		s-1,0.447-1,1v2h-2V9c0-0.553-0.448-1-1-1s-1,0.447-1,1v2h-2V9c0-0.553-0.448-1-1-1s-1,0.447-1,1v2h-2V9c0-0.553-0.448-1-1-1
 	          		s-1,0.447-1,1v2h-2v4h-1.643C16.955,15,15,16.955,15,19.357V21h-4v2H9c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v2H9
 	          		c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v2H9c-0.552,0-1,0.447-1,1c0,0.553,0.448,1,1,1h2v2H9c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v2h4
@@ -212,11 +216,11 @@ const Domains = () => {
 	          		h-2v-2H51z M15,37h-2V23h2V37z M23,13h14v2H23V13z M37,47H23v-2h14V47z M43,21v18v1.643c0,1.3-1.058,2.357-2.357,2.357H39H21
 	          		h-1.643C18.058,43,17,41.942,17,40.643V39V21v-1.643c0-1.3,1.058-2.357,2.357-2.357H21h18h1.643c1.3,0,2.357,1.058,2.357,2.357V21
 	          		z M47,37h-2V23h2V37z" />
-	          		<circle cx="4" cy="37" r="1" />
-	          		<circle cx="4" cy="41" r="1" />
-	          		<circle cx="4" cy="45" r="1" />
-	          		<circle cx="4" cy="49" r="1" />
-	          		<path d="M54.501,0H46v1c0,1.654-1.346,3-3,3s-3-1.346-3-3V0H5.499C2.467,0,0,2.467,0,5.499V12h4v2H0v40.501
+									<circle cx="4" cy="37" r="1" />
+									<circle cx="4" cy="41" r="1" />
+									<circle cx="4" cy="45" r="1" />
+									<circle cx="4" cy="49" r="1" />
+									<path d="M54.501,0H46v1c0,1.654-1.346,3-3,3s-3-1.346-3-3V0H5.499C2.467,0,0,2.467,0,5.499V12h4v2H0v40.501
 	          		C0,57.533,2.467,60,5.499,60H40v-1c0-1.654,1.346-3,3-3s3,1.346,3,3v1h8.501C57.533,60,60,57.533,60,54.501V5.499
 	          		C60,2.467,57.533,0,54.501,0z M58,17h-2c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v1h-2c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v1h-2
 	          		c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v1h-2c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v1h-2c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v1h-2
@@ -224,31 +228,31 @@ const Domains = () => {
 	          		c-0.552,0-1,0.447-1,1s0.448,1,1,1h2v11.501C58,56.431,56.431,58,54.501,58h-6.602c-0.464-2.279-2.485-4-4.899-4
 	          		s-4.435,1.721-4.899,4H5.499C3.569,58,2,56.431,2,54.501V16h4v-6H2V5.499C2,3.569,3.569,2,5.499,2h32.602
 	          		C38.565,4.279,40.585,6,43,6s4.435-1.721,4.899-4h6.602C56.431,2,58,3.569,58,5.499V17z" />
-	          	</g>
-	          </g>
-          </svg>
-          <svg width="100%" height="100%" viewBox="-50 -13 36 61" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <title>internet-of-things-solid</title>
-            <path d="M30.86,20.94a4.74,4.74,0,0,1,1.86.64h.05a15.12,15.12,0,0,0-.61-8.37,1,1,0,1,0-1.87.69A13.19,13.19,0,0,1,30.86,20.94Z"/>
-            <path d="M26.33,28.58a13,13,0,0,1-6.07,2.82,1,1,0,1,0,.17,2h.18A15.16,15.16,0,0,0,27.82,30v-.07A4.7,4.7,0,0,1,26.33,28.58Z"/>
-            <path d="M15.62,31.34a13.27,13.27,0,0,1-4.29-1.61A15.09,15.09,0,0,1,9.7,28.62,4.69,4.69,0,0,1,8.24,30a15.9,15.9,0,0,0,2.07,1.48,15.4,15.4,0,0,0,4.94,1.86h.19a1,1,0,0,0,.18-2Z"/>
-            <path d="M4.56,21.15q.3,0,.6-.09A13,13,0,0,1,5.7,14a1,1,0,0,0-1.88-.69,15,15,0,0,0-.56,8.43A4.77,4.77,0,0,1,4.56,21.15Z"/>
-            <path d="M31.9,23a3.2,3.2,0,0,0-2.43-.42,3.33,3.33,0,0,0-1.4.77L24.2,21.11a6.87,6.87,0,0,0-2.77-8.43l-.11-.07a6.73,6.73,0,0,0-2.42-.81V8a3.23,3.23,0,0,0,1.88-1.5A3.3,3.3,0,0,0,19.65,2a3.15,3.15,0,0,0-2.42-.32,3.24,3.24,0,0,0-2,1.51,3.3,3.3,0,0,0,1.13,4.46A3,3,0,0,0,17.1,8v3.8a6.63,6.63,0,0,0-4.86,3.28,6.85,6.85,0,0,0-.42,6l-4,2.29A3.79,3.79,0,0,0,7.37,23,3.2,3.2,0,0,0,3,24.21H3a3.3,3.3,0,0,0,1.1,4.46,3.21,3.21,0,0,0,1.65.46,2.93,2.93,0,0,0,.78-.1,3.25,3.25,0,0,0,2.34-3.94l0-.17,3.88-2.24a7,7,0,0,0,1.89,1.71,6.49,6.49,0,0,0,8.73-1.7l3.83,2.21a3.29,3.29,0,0,0,1.45,3.64A3.18,3.18,0,0,0,33,27.41,3.3,3.3,0,0,0,31.9,23Z"/>
-            <path d="M8.05,10A13,13,0,0,1,13.4,6.23a5,5,0,0,1-.17-2.07,15.15,15.15,0,0,0-6.7,4.51A1,1,0,0,0,8.05,10Z"/>
-            <path d="M24.67,7.23A13.11,13.11,0,0,1,27.93,10a1,1,0,1,0,1.52-1.3,15,15,0,0,0-3.76-3.2,15.87,15.87,0,0,0-2.94-1.33,4.79,4.79,0,0,1-.15,2.06A14.1,14.1,0,0,1,24.67,7.23Z"/>
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>IOT</text>
-        </mask>
+								</g>
+							</g>
+						</svg>
+						<svg width="100%" height="100%" viewBox="-50 -13 36 61" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+							<title>internet-of-things-solid</title>
+							<path d="M30.86,20.94a4.74,4.74,0,0,1,1.86.64h.05a15.12,15.12,0,0,0-.61-8.37,1,1,0,1,0-1.87.69A13.19,13.19,0,0,1,30.86,20.94Z" />
+							<path d="M26.33,28.58a13,13,0,0,1-6.07,2.82,1,1,0,1,0,.17,2h.18A15.16,15.16,0,0,0,27.82,30v-.07A4.7,4.7,0,0,1,26.33,28.58Z" />
+							<path d="M15.62,31.34a13.27,13.27,0,0,1-4.29-1.61A15.09,15.09,0,0,1,9.7,28.62,4.69,4.69,0,0,1,8.24,30a15.9,15.9,0,0,0,2.07,1.48,15.4,15.4,0,0,0,4.94,1.86h.19a1,1,0,0,0,.18-2Z" />
+							<path d="M4.56,21.15q.3,0,.6-.09A13,13,0,0,1,5.7,14a1,1,0,0,0-1.88-.69,15,15,0,0,0-.56,8.43A4.77,4.77,0,0,1,4.56,21.15Z" />
+							<path d="M31.9,23a3.2,3.2,0,0,0-2.43-.42,3.33,3.33,0,0,0-1.4.77L24.2,21.11a6.87,6.87,0,0,0-2.77-8.43l-.11-.07a6.73,6.73,0,0,0-2.42-.81V8a3.23,3.23,0,0,0,1.88-1.5A3.3,3.3,0,0,0,19.65,2a3.15,3.15,0,0,0-2.42-.32,3.24,3.24,0,0,0-2,1.51,3.3,3.3,0,0,0,1.13,4.46A3,3,0,0,0,17.1,8v3.8a6.63,6.63,0,0,0-4.86,3.28,6.85,6.85,0,0,0-.42,6l-4,2.29A3.79,3.79,0,0,0,7.37,23,3.2,3.2,0,0,0,3,24.21H3a3.3,3.3,0,0,0,1.1,4.46,3.21,3.21,0,0,0,1.65.46,2.93,2.93,0,0,0,.78-.1,3.25,3.25,0,0,0,2.34-3.94l0-.17,3.88-2.24a7,7,0,0,0,1.89,1.71,6.49,6.49,0,0,0,8.73-1.7l3.83,2.21a3.29,3.29,0,0,0,1.45,3.64A3.18,3.18,0,0,0,33,27.41,3.3,3.3,0,0,0,31.9,23Z" />
+							<path d="M8.05,10A13,13,0,0,1,13.4,6.23a5,5,0,0,1-.17-2.07,15.15,15.15,0,0,0-6.7,4.51A1,1,0,0,0,8.05,10Z" />
+							<path d="M24.67,7.23A13.11,13.11,0,0,1,27.93,10a1,1,0,1,0,1.52-1.3,15,15,0,0,0-3.76-3.2,15.87,15.87,0,0,0-2.94-1.33,4.79,4.79,0,0,1-.15,2.06A14.1,14.1,0,0,1,24.67,7.23Z" />
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-6xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>IOT</text>
+					</mask>
 
-        <mask id="security">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
-          	 viewBox="420 -150 650 650" xmlSpace="preserve">
-          <g>
-          	<path d="M156.834,62.487c-16.939,0-30.72,8.972-30.72,20s13.781,20,30.72,20s30.719-8.972,30.719-20S173.773,62.487,156.834,62.487
+					<mask id="security">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+							viewBox="420 -150 650 650" xmlSpace="preserve">
+							<g>
+								<path d="M156.834,62.487c-16.939,0-30.72,8.972-30.72,20s13.781,20,30.72,20s30.719-8.972,30.719-20S173.773,62.487,156.834,62.487
           		z"/>
-          	<g>
-          		<path d="M267.013,329.333c-10.513,8.301-23.41,12.82-37.01,12.82c-13.231,0-25.803-4.276-36.155-12.153H77.855
+								<g>
+									<path d="M267.013,329.333c-10.513,8.301-23.41,12.82-37.01,12.82c-13.231,0-25.803-4.276-36.155-12.153H77.855
           			c-19.514,0-35.39-15.875-35.39-35.39v-19.218c9.604,7.996,21.945,12.811,35.39,12.811h92.562
           			c-0.191-1.957-0.288-3.935-0.288-5.927c0-4.823,0.576-9.555,1.678-14.128H77.855c-19.514,0-35.39-15.876-35.39-35.39v-19.061
           			c9.604,7.998,21.943,12.818,35.39,12.818h130.301c6.866-2.686,14.238-4.107,21.834-4.107c2.371,0,4.74,0.14,7.09,0.418
@@ -260,11 +264,11 @@ const Domains = () => {
           			S79.639,50.104,97.074,38.752z M42.465,152.058c9.604,7.998,21.943,12.817,35.39,12.817h157.958
           			c13.446,0,25.785-4.82,35.39-12.817v18.905c0,19.514-15.876,35.39-35.39,35.39H77.855c-19.514,0-35.39-15.876-35.39-35.39V152.058
           			z"/>
-          		<g>
-          			<path d="M213.305,281.879c-1.172-1.171-3.07-1.172-4.243,0l-4.243,4.242c-0.563,0.563-0.879,1.326-0.879,2.121
+									<g>
+										<path d="M213.305,281.879c-1.172-1.171-3.07-1.172-4.243,0l-4.243,4.242c-0.563,0.563-0.879,1.326-0.879,2.121
           				c0,0.796,0.316,1.559,0.879,2.122l17.097,17.099c0.586,0.586,1.354,0.879,2.121,0.879c0.768,0,1.535-0.293,2.121-0.878
           				l4.243-4.242c0.563-0.563,0.879-1.326,0.879-2.121c0-0.796-0.315-1.559-0.878-2.122L213.305,281.879z"/>
-          			<path d="M323.383,188.9c-2.64-2.64-6.295-4.154-10.063-4.154l-14.826,0.176c-3.718,0.045-7.219,1.519-9.858,4.153l-47.297,47.299
+										<path d="M323.383,188.9c-2.64-2.64-6.295-4.154-10.063-4.154l-14.826,0.176c-3.718,0.045-7.219,1.519-9.858,4.153l-47.297,47.299
           				c-3.705-0.912-7.514-1.374-11.349-1.374c-12.627,0-24.496,4.915-33.418,13.84c-8.932,8.931-13.851,20.805-13.851,33.436
           				c0,12.631,4.919,24.505,13.851,33.435c8.931,8.93,20.804,13.848,33.432,13.848c12.629,0,24.502-4.918,33.434-13.848
           				c11.739-11.736,16.435-28.746,12.472-44.772l47.295-47.296c2.637-2.635,4.112-6.137,4.155-9.859l0.176-14.691
@@ -277,55 +281,55 @@ const Domains = () => {
           				c0,0.795,0.316,1.559,0.879,2.121l5.899,5.898l-13.25,13.25l-5.898-5.899c-1.172-1.172-3.071-1.171-4.243,0l-4.243,4.242
           				c-0.563,0.563-0.879,1.326-0.879,2.122c0,0.795,0.316,1.559,0.879,2.121l5.899,5.9l-12.17,12.171
           				C262.806,267.073,262.525,268.261,262.884,269.338z"/>
-          		</g>
-          	</g>
-          </g>
-          </svg>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-250 -90 1 404.27" >
-			<g>
-			<path d="M196.926,55.171c-0.11-5.785-0.215-11.25-0.215-16.537c0-4.142-3.357-7.5-7.5-7.5c-32.075,0-56.496-9.218-76.852-29.01
+									</g>
+								</g>
+							</g>
+						</svg>
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-250 -90 1 404.27" >
+							<g>
+								<path d="M196.926,55.171c-0.11-5.785-0.215-11.25-0.215-16.537c0-4.142-3.357-7.5-7.5-7.5c-32.075,0-56.496-9.218-76.852-29.01
 			c-2.912-2.832-7.546-2.831-10.457,0c-20.354,19.792-44.771,29.01-76.844,29.01c-4.142,0-7.5,3.358-7.5,7.5
 			c0,5.288-0.104,10.755-0.215,16.541c-1.028,53.836-2.436,127.567,87.331,158.682c0.796,0.276,1.626,0.414,2.456,0.414
 			c0.83,0,1.661-0.138,2.456-0.414C199.36,182.741,197.954,109.008,196.926,55.171z M107.131,198.812
 			c-76.987-27.967-75.823-89.232-74.79-143.351c0.062-3.248,0.122-6.396,0.164-9.482c30.04-1.268,54.062-10.371,74.626-28.285
 			c20.566,17.914,44.592,27.018,74.634,28.285c0.042,3.085,0.102,6.231,0.164,9.477C182.961,109.577,184.124,170.844,107.131,198.812
 			z" />
-			<path d="M132.958,81.082l-36.199,36.197l-15.447-15.447c-2.929-2.928-7.678-2.928-10.606,0c-2.929,2.93-2.929,7.678,0,10.607
+								<path d="M132.958,81.082l-36.199,36.197l-15.447-15.447c-2.929-2.928-7.678-2.928-10.606,0c-2.929,2.93-2.929,7.678,0,10.607
 			l20.75,20.75c1.464,1.464,3.384,2.196,5.303,2.196c1.919,0,3.839-0.732,5.303-2.196l41.501-41.5
 			c2.93-2.929,2.93-7.678,0.001-10.606C140.636,78.154,135.887,78.153,132.958,81.082z" />
-			</g>
-		  </svg>
-          <text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-5xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>SECURITY</text>
-        </mask>
+							</g>
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[10rem] md:text-8xl text-5xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle'>SECURITY</text>
+					</mask>
 
-        <mask id="cg">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg id="Layer_1" width="100%" height="100%" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="1000 -180 85 911.85">
-            <path d="M456,.15,246.9,54.64,216,107.73l-62.8-.46L.15,256.1l153,148.82,62.76-.48,31,53.07L456,512l56-203.26L480.17,256.1,512,203.45ZM221,116.27,381,76.3,289.14,231H105.51Zm0,279.62L105.51,281.22H289.14l91.8,154.64ZM425.7,410.72,333.85,256.1,425.7,101.41,470,256.1Z" transform="translate(-0.15 -0.15)" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-38 -9 24 44">
-            <path d="m12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12c0-6.627-5.373-12-12-12zm0 1.846c5.595.007 10.128 4.545 10.128 10.141 0 5.601-4.54 10.141-10.141 10.141s-10.141-4.54-10.141-10.141c0-2.8 1.135-5.335 2.97-7.17 1.837-1.835 4.374-2.97 7.176-2.97h.007zm0 2.77c-4.392.774-8.308 4.824-8.308 9.23 2.149-3.794 3.584-4.067 3.981-4.067s.606.206.606.663v5.654c0 .703-1.366.588-1.818.519 1.67 2.485 5.539 2.77 5.539 2.77l1.846-1.846 1.846.923c2.914-1.334 4.615-4.19 4.615-4.615-.701.868-1.646 1.515-2.731 1.836l-.039.01c-.245 0-.923-.126-.923-.462v-6.693c0-.581 1.342-2.354 1.846-3-3.332.873-4.298 2.394-4.298 2.394s-.253-.548-1.24-.548c.501.473.838 1.114.922 1.832l.001.014v5.654c-.525.373-1.144.653-1.813.801l-.034.006c-.64 0-.952-.26-.952-.75s.029-6.634.029-6.634-.923.339-.923-1.558c0-.949 1.846-2.135 1.846-2.135z" />
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-6xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>COMPUTER</text>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-6xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>GRAPHICS</text>
-        </mask>
+					<mask id="cg">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg id="Layer_1" width="100%" height="100%" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="1000 -180 85 911.85">
+							<path d="M456,.15,246.9,54.64,216,107.73l-62.8-.46L.15,256.1l153,148.82,62.76-.48,31,53.07L456,512l56-203.26L480.17,256.1,512,203.45ZM221,116.27,381,76.3,289.14,231H105.51Zm0,279.62L105.51,281.22H289.14l91.8,154.64ZM425.7,410.72,333.85,256.1,425.7,101.41,470,256.1Z" transform="translate(-0.15 -0.15)" />
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-38 -9 24 44">
+							<path d="m12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12c0-6.627-5.373-12-12-12zm0 1.846c5.595.007 10.128 4.545 10.128 10.141 0 5.601-4.54 10.141-10.141 10.141s-10.141-4.54-10.141-10.141c0-2.8 1.135-5.335 2.97-7.17 1.837-1.835 4.374-2.97 7.176-2.97h.007zm0 2.77c-4.392.774-8.308 4.824-8.308 9.23 2.149-3.794 3.584-4.067 3.981-4.067s.606.206.606.663v5.654c0 .703-1.366.588-1.818.519 1.67 2.485 5.539 2.77 5.539 2.77l1.846-1.846 1.846.923c2.914-1.334 4.615-4.19 4.615-4.615-.701.868-1.646 1.515-2.731 1.836l-.039.01c-.245 0-.923-.126-.923-.462v-6.693c0-.581 1.342-2.354 1.846-3-3.332.873-4.298 2.394-4.298 2.394s-.253-.548-1.24-.548c.501.473.838 1.114.922 1.832l.001.014v5.654c-.525.373-1.144.653-1.813.801l-.034.006c-.64 0-.952-.26-.952-.75s.029-6.634.029-6.634-.923.339-.923-1.558c0-.949 1.846-2.135 1.846-2.135z" />
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-6xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>COMPUTER</text>
+						<text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-6xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>GRAPHICS</text>
+					</mask>
 
-        <mask id="systemProgramming">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg width="100%" height="100%" viewBox="94 -24 16 86" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <path d="M32,5H4A2,2,0,0,0,2,7V29a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V7A2,2,0,0,0,32,5ZM6.8,15.81V13.17l10,4.59v2.08l-10,4.59V21.78l6.51-3ZM23.4,25.4H17V23h6.4ZM4,9.2V7H32V9.2Z" className="clr-i-solid clr-i-solid-path-1"></path>
-          </svg>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-1500 -330 1200 1200"  xmlSpace="preserve">
-            <g>
-            	<path d="M326.629,212.262c23.443,0,42.531-19.066,42.531-42.528c0-23.452-19.088-42.519-42.531-42.519
+					<mask id="systemProgramming">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg width="100%" height="100%" viewBox="94 -24 16 86" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+							<path d="M32,5H4A2,2,0,0,0,2,7V29a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V7A2,2,0,0,0,32,5ZM6.8,15.81V13.17l10,4.59v2.08l-10,4.59V21.78l6.51-3ZM23.4,25.4H17V23h6.4ZM4,9.2V7H32V9.2Z" className="clr-i-solid clr-i-solid-path-1"></path>
+						</svg>
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-1500 -330 1200 1200" xmlSpace="preserve">
+							<g>
+								<path d="M326.629,212.262c23.443,0,42.531-19.066,42.531-42.528c0-23.452-19.088-42.519-42.531-42.519
             		c-23.459,0-42.512,19.066-42.512,42.519C284.117,193.196,303.17,212.262,326.629,212.262z"/>
-            	<path d="M92.789,335.697c-3.391,0.985-6.926,1.478-10.494,1.478c-3.307,0-6.617-0.429-9.943-1.324
+								<path d="M92.789,335.697c-3.391,0.985-6.926,1.478-10.494,1.478c-3.307,0-6.617-0.429-9.943-1.324
             		c-7.379-2.012-13.818-6.16-18.764-11.891H41.076c-4.281,0-7.75-3.488-7.75-7.767v-26.043c-6.363-11.682-5.924-25.301,0-36.274
             		v-18.42c-5.895-10.94-6.328-24.512,0-36.234V74.507c0-4.278,3.469-7.767,7.75-7.767h183.348c3.686-2.439,7.688-4.455,12.115-5.643
             		c3.469-0.921,7.068-1.404,10.688-1.404c6.406,0,12.721,1.494,18.355,4.31c0.791-12.586,7.363-23.531,16.922-30.578H41.076
             		C18.439,33.425,0,51.846,0,74.507v241.686c0,22.659,18.439,41.082,41.076,41.082h66.488
             		C100.361,352.101,94.984,344.546,92.789,335.697z"/>
-            	<path d="M454.715,33.425h-83.957c9.572,7.047,16.131,18.01,16.9,30.595c5.685-2.832,11.984-4.326,18.377-4.326
+								<path d="M454.715,33.425h-83.957c9.572,7.047,16.131,18.01,16.9,30.595c5.685-2.832,11.984-4.326,18.377-4.326
             		c8.17,0,15.936,2.664,22.588,7.047h26.092c4.277,0,7.752,3.488,7.752,7.767v41.994c4.715,9.213,5.953,19.61,3.275,29.458
             		c-0.777,2.914-1.922,5.652-3.275,8.275v31.154c5.824,11.477,6.248,25.365,0,37.545v93.26c0,4.278-3.475,7.767-7.752,7.767H237.084
             		c-4.908,5.682-11.479,9.912-18.807,11.898c-3.232,0.881-6.559,1.316-9.883,1.316c-3.586,0-7.104-0.5-10.494-1.471
@@ -334,7 +338,7 @@ const Domains = () => {
             		V434.55c0-26.867-20.471-48.803-46.607-51.635v-25.64h135.768c22.637,0,41.072-18.423,41.072-41.082V74.507
             		C495.787,51.846,477.352,33.425,454.715,33.425z M340.578,434.55v2.81H155.225v-2.81c0-14.991,12.207-27.198,27.221-27.198h130.91
             		C328.377,407.352,340.578,419.559,340.578,434.55z"/>
-            	<path d="M255.377,86.873c-2.484-1.453-5.328-2.178-8.15-2.178c-1.424,0-2.842,0.178-4.23,0.549
+								<path d="M255.377,86.873c-2.484-1.453-5.328-2.178-8.15-2.178c-1.424,0-2.842,0.178-4.23,0.549
             		c-4.184,1.129-7.719,3.85-9.898,7.611l-19.83,34.313c-4.5,7.806-1.855,17.768,5.975,22.287l14.971,8.631
             		c-0.195,1.347-0.373,2.679-0.553,4.021c2.922,2.631,5.57,5.554,7.559,9.048l15.775,27.295c5.055,8.792,6.377,18.996,3.728,28.885
             		c-1.842,6.684-5.361,12.618-10.27,17.34c2.279,2.189,4.182,4.708,5.844,7.379l13.949-8.048c6.25,4.755,12.885,8.986,20.248,12.067
@@ -347,7 +351,7 @@ const Domains = () => {
             		c-9.01,0-16.324,7.315-16.324,16.324v16.801c-7.344,3.066-13.998,7.297-20.248,12.059L255.377,86.873z M326.629,110.551
             		c32.633,0,59.174,26.546,59.174,59.183c0,32.64-26.541,59.192-59.174,59.192c-32.629,0-59.174-26.553-59.174-59.192
             		C267.455,137.097,294,110.551,326.629,110.551z"/>
-            	<path d="M174.018,326.558v-13.359c5.846-2.432,11.111-5.779,16.086-9.576l11.82,6.806c1.98,1.163,4.195,1.761,6.471,1.761
+								<path d="M174.018,326.558v-13.359c5.846-2.432,11.111-5.779,16.086-9.576l11.82,6.806c1.98,1.163,4.195,1.761,6.471,1.761
             		c1.115,0,2.23-0.162,3.311-0.443c3.311-0.904,6.168-3.077,7.861-6.032l15.777-27.252c3.568-6.176,1.432-14.111-4.766-17.674
             		l-11.867-6.867c0.357-3.063,0.904-6.071,0.904-9.229c0-3.166-0.547-6.193-0.904-9.252l11.867-6.846
             		c2.973-1.734,5.133-4.553,6.055-7.879c0.891-3.336,0.387-6.848-1.289-9.824l-15.777-27.237c-2.369-4.149-6.73-6.468-11.203-6.468
@@ -360,71 +364,244 @@ const Domains = () => {
             		c0,7.137,5.781,12.941,12.951,12.941h31.447C168.223,339.5,174.018,333.695,174.018,326.558z M109.631,244.692
             		c0-19.739,16.002-35.723,35.682-35.723c19.764,0,35.764,15.983,35.764,35.723c0,19.705-16,35.689-35.764,35.689
             		C125.633,280.38,109.631,264.397,109.631,244.692z"/>
-            </g>
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>SYSTEM</text>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>PROGRAMMING</text>
-        </mask>
+							</g>
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>SYSTEM</text>
+						<text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>PROGRAMMING</text>
+					</mask>
 
-        <mask id="app">
-          <rect fill='white' width="100%" height="100%" ></rect>
-          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="230 -75 100 250.9" width="100%" height="100%">
-            <path d="M3.34,0h116.2a3.35,3.35,0,0,1,3.34,3.34v77a3.35,3.35,0,0,1-3.34,3.34H3.34A3.35,3.35,0,0,1,0,80.32v-77A3.35,3.35,0,0,1,3.34,0ZM13.49,63.91a2.59,2.59,0,1,1,0-5.17H52.94a2.59,2.59,0,1,1,0,5.17Zm.15-13.28a2.59,2.59,0,0,1,0-5.17H42.4a2.59,2.59,0,0,1,0,5.17ZM13.49,37.4a2.59,2.59,0,1,1,0-5.17H33.85a2.59,2.59,0,0,1,0,5.17Zm0-13.26a2.59,2.59,0,1,1,0-5.17H25.3a2.59,2.59,0,0,1,0,5.17Zm97,26.19v6.44l-13.23,7.5v-7.5l8.52-3.24-8.52-3.2v-7.5l13.23,7.5Zm-22.92,16H82l7-27.11h5.63l-7,27.11Zm-9.41-16-8.53,3.2,8.53,3.24v7.5L65,56.77V50.33l13.24-7.5v7.5Zm5.67-38.68v3.67A1.83,1.83,0,0,1,82,17.15H79a14.43,14.43,0,0,1-1.6,3.5l2,2a1.83,1.83,0,0,1,0,2.58l-2.71,2.71a1.83,1.83,0,0,1-2.58,0l-2.18-2.18a14.43,14.43,0,0,1-3.6,1.35v2.82a1.84,1.84,0,0,1-1.83,1.83H62.63a1.84,1.84,0,0,1-1.83-1.83V26.85a14.2,14.2,0,0,1-3.5-1.59l-2,2a1.82,1.82,0,0,1-2.59,0L50,24.55A1.84,1.84,0,0,1,50,22l2.18-2.17a14.5,14.5,0,0,1-1.35-3.61H48a1.83,1.83,0,0,1-1.83-1.83v-2.7H3.09V70.84a3,3,0,0,0,3,3H116.85a3,3,0,0,0,3-3V11.65Zm-11.42,0H57.62a7.71,7.71,0,0,0-.11,1.28,7.52,7.52,0,0,0,15,0,7.71,7.71,0,0,0-.1-1.28Zm41.79-6.73a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm-13.44,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm6.72,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2ZM46.29,88.27h30.3c.08,5.24,2.24,9.94,8.09,13.63H38.2c4.71-3.41,8.11-7.54,8.09-13.63Z" />
-          </svg>
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-850 -250 500 1002.664" xmlSpace="preserve">
-            <g>
-            	<g>
-            		<g>
-            			<path d="M310.166,397.593H75.951V61.671h234.151v25.13h31.472V54.811C341.595,24.677,316.853,0,286.74,0H99.355
+					<mask id="app">
+						<rect fill='white' width="100%" height="100%" ></rect>
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="230 -75 100 250.9" width="100%" height="100%">
+							<path d="M3.34,0h116.2a3.35,3.35,0,0,1,3.34,3.34v77a3.35,3.35,0,0,1-3.34,3.34H3.34A3.35,3.35,0,0,1,0,80.32v-77A3.35,3.35,0,0,1,3.34,0ZM13.49,63.91a2.59,2.59,0,1,1,0-5.17H52.94a2.59,2.59,0,1,1,0,5.17Zm.15-13.28a2.59,2.59,0,0,1,0-5.17H42.4a2.59,2.59,0,0,1,0,5.17ZM13.49,37.4a2.59,2.59,0,1,1,0-5.17H33.85a2.59,2.59,0,0,1,0,5.17Zm0-13.26a2.59,2.59,0,1,1,0-5.17H25.3a2.59,2.59,0,0,1,0,5.17Zm97,26.19v6.44l-13.23,7.5v-7.5l8.52-3.24-8.52-3.2v-7.5l13.23,7.5Zm-22.92,16H82l7-27.11h5.63l-7,27.11Zm-9.41-16-8.53,3.2,8.53,3.24v7.5L65,56.77V50.33l13.24-7.5v7.5Zm5.67-38.68v3.67A1.83,1.83,0,0,1,82,17.15H79a14.43,14.43,0,0,1-1.6,3.5l2,2a1.83,1.83,0,0,1,0,2.58l-2.71,2.71a1.83,1.83,0,0,1-2.58,0l-2.18-2.18a14.43,14.43,0,0,1-3.6,1.35v2.82a1.84,1.84,0,0,1-1.83,1.83H62.63a1.84,1.84,0,0,1-1.83-1.83V26.85a14.2,14.2,0,0,1-3.5-1.59l-2,2a1.82,1.82,0,0,1-2.59,0L50,24.55A1.84,1.84,0,0,1,50,22l2.18-2.17a14.5,14.5,0,0,1-1.35-3.61H48a1.83,1.83,0,0,1-1.83-1.83v-2.7H3.09V70.84a3,3,0,0,0,3,3H116.85a3,3,0,0,0,3-3V11.65Zm-11.42,0H57.62a7.71,7.71,0,0,0-.11,1.28,7.52,7.52,0,0,0,15,0,7.71,7.71,0,0,0-.1-1.28Zm41.79-6.73a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm-13.44,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm6.72,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2ZM46.29,88.27h30.3c.08,5.24,2.24,9.94,8.09,13.63H38.2c4.71-3.41,8.11-7.54,8.09-13.63Z" />
+						</svg>
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-850 -250 500 1002.664" xmlSpace="preserve">
+							<g>
+								<g>
+									<g>
+										<path d="M310.166,397.593H75.951V61.671h234.151v25.13h31.472V54.811C341.595,24.677,316.853,0,286.74,0H99.355
             				C69.199,0,44.522,24.677,44.522,54.811v393.02c0,30.178,24.677,54.833,54.833,54.833H286.74
             				c30.113,0,54.855-24.655,54.855-54.833V397.01h-31.429C310.166,397.01,310.166,397.593,310.166,397.593z M193.015,475.226
             				c-13.892,0-25.108-11.238-25.108-25.108c0-13.913,11.217-25.13,25.108-25.13c13.913,0,25.152,11.238,25.152,25.13
             				C218.167,463.988,206.929,475.226,193.015,475.226z"/>
-            			<rect x="102.785" y="95.386" width="70.256" height="42.84"/>
-            			<rect x="102.785" y="205.073" width="70.256" height="42.84"/>
-            			<rect x="102.785" y="319.873" width="70.256" height="42.818"/>
-            			<path d="M422.399,223.905c-2.481-12.986-7.507-25.001-14.625-35.506l25.195-25.216l-25.734-25.648l-25.152,25.173
+										<rect x="102.785" y="95.386" width="70.256" height="42.84" />
+										<rect x="102.785" y="205.073" width="70.256" height="42.84" />
+										<rect x="102.785" y="319.873" width="70.256" height="42.818" />
+										<path d="M422.399,223.905c-2.481-12.986-7.507-25.001-14.625-35.506l25.195-25.216l-25.734-25.648l-25.152,25.173
             				c-10.462-7.161-22.541-12.123-35.484-14.625v-35.7h-36.411v35.7c-12.964,2.502-24.936,7.485-35.505,14.625l-25.108-25.173
             				l-25.734,25.669l25.152,25.216c-7.097,10.505-12.101,22.52-14.582,35.484h-35.657v36.39h35.656
             				c2.481,12.921,7.507,24.936,14.603,35.484l-25.173,25.173l25.734,25.626l25.173-25.152c10.527,7.161,22.541,12.144,35.505,14.668
             				v35.635h36.411v-35.656c12.942-2.481,24.936-7.507,35.484-14.625l25.152,25.152l25.734-25.648l-25.195-25.173
             				c7.118-10.505,12.123-22.541,14.625-35.505h35.678l0,0v-36.368H422.399z M328.437,281.693c-21.894,0-39.669-17.688-39.669-39.604
             				c0-21.894,17.774-39.69,39.669-39.69c21.916,0,39.604,17.774,39.604,39.69C368.041,264.026,350.309,281.693,328.437,281.693z"/>
-            		</g>
-            	</g>
-              </g>
-          </svg>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>WEB/MOBILE</text>
-          <text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>APP</text>
-        </mask>
-        
-        <rect width="100%" fill="url('#radial-matrix-bg')" height="100%" className={maskStyle}></rect>
-      </svg>
-      <div className='absolute left-0 right-0 flex ml-auto mr-auto w-fit space-x-10 md:space-x-10 top-[5%] lg:top-1/4 md:top-1/4'>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-vr')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>!</h1>
-          </div>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-ai')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>(</h1>
-          </div>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-iot')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>#</h1>
-          </div>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-security')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>$</h1>
-          </div>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-cg')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>%</h1>
-          </div>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-systemProgramming')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>-</h1>
-          </div>
-          <div className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-app')} onMouseLeave={() => setMaskStyle('mask-bg')}>
-            <h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>)</h1>
-          </div>
-      </div>
-    </div>
-  )
+									</g>
+								</g>
+							</g>
+						</svg>
+						<text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="42%" textAnchor='middle'>WEB/MOBILE</text>
+						<text className='font-extrabold tracking-wide lg:text-[7rem] md:text-7xl text-5xl' dominantBaseline="central" x="50%" y="60%" textAnchor='middle'>APP</text>
+					</mask>
+
+					<rect width="100%" fill="url('#radial-matrix-bg')" height="100%" className={maskStyle}></rect>
+				</svg>
+				<motion.div variants={stagger} whileInView="animate" initial="initial"  className='absolute left-0 right-0 flex ml-auto mr-auto w-fit space-x-10 md:space-x-10 top-[5%] lg:top-1/4 md:top-1/4'>
+					<motion.div key="bg" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-vr')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>!</h1>
+					</motion.div>
+					<motion.div key="ai" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-ai')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>(</h1>
+					</motion.div>
+					<motion.div key="iot" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-iot')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>#</h1>
+					</motion.div>
+					<motion.div key="security" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-security')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>$</h1>
+					</motion.div>
+					<motion.div key="cg" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-cg')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>%</h1>
+					</motion.div>
+					<motion.div key="system" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-systemProgramming')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>-</h1>
+					</motion.div>
+					<motion.div key="app" variants={slideInRight} className='block p-1 cursor-pointer lg:p-2 md:p-1 bg-matrix_green_btn drop-shadow-md hover:shadow-matrix_green_btn hover:drop-shadow-none' onMouseEnter={() => setMaskStyle('mask-app')} onMouseLeave={() => setMaskStyle('mask-bg')}>
+						<h1 className='font-bold text-black lg:text-2xl md:text-lg sm:text-base font-matrixCode'>)</h1>
+					</motion.div>
+				</motion.div>
+			</motion.div>
+			<motion.div variants={slideInUp} whileInView="animate" initial="initial" viewport={viewPort} className='grid justify-center w-full h-full grid-cols-1 p-4 bg-invert_radial_matrix_bg md:hidden place-content-center place-items-center'>
+				<div className='box-border relative p-0 mx-0 lg:col-span-1 md:col-span-1 lg:mx-6'>
+					<video
+						autoPlay
+						className='object-cover w-full h-full mx-auto overflow-hidden'
+						// className='w-auto bg-fixed bg-center bg-cover lg:h-auto md:h-3/4 lg:min-w-full lg:min-h-full max-w-none aspect-[6/2]'
+						loop
+						muted
+						src='/assets/matrixRain.mp4'
+					/>
+					<svg className='absolute top-0 left-0 w-full h-full '>
+						<defs>
+							<linearGradient id='radial-matrix' x1="20%" y1="20%" x2="100%" y2="100%">
+								<stop offset="0%" stopColor="rgb(101, 222, 138)" stopOpacity="1" />
+								<stop offset="100%" stopColor="rgb(36, 151, 93)" stopOpacity="1" />
+							</linearGradient>
+						</defs>
+
+						<mask id='title'>
+							<rect fill='white' width="100%" height="100%"></rect>
+							<text className='font-extrabold tracking-wide text-7xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle' >DOMAINS</text>
+						</mask>
+						<mask id="ar">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg width="600px" height="600px" viewBox="0 0 400 400" x="30%" y="10%" xmlns="http://www.w3.org/2000/svg">
+								<g transform="translate(-33.522 -376.821)">
+									<path d="M62.649,430.7a18.075,18.075,0,0,0,2.809,8.7l5.192,8.124a19.482,19.482,0,0,0,16.415,8.991h8.869a19.481,19.481,0,0,0,16.415-8.991l5.193-8.124a18.084,18.084,0,0,0,2.808-8.7" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+									<path d="M62.85,399.275a24.227,24.227,0,0,1,24.018-20.954h9.273a24.226,24.226,0,0,1,24.009,20.954" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+									<path d="M57.446,402.162v25.429a2.891,2.891,0,0,0,2.639,2.88l16.157,1.414a6.482,6.482,0,0,0,5.263-1.993l6.588-6.934a4.7,4.7,0,0,1,6.814,0l6.588,6.934a6.48,6.48,0,0,0,5.263,1.993l16.157-1.414a2.891,2.891,0,0,0,2.639-2.88V402.162a2.892,2.892,0,0,0-2.891-2.891H60.337A2.891,2.891,0,0,0,57.446,402.162Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+									<path d="M115,405.281H68a3.087,3.087,0,1,0,0,6.175H115a3.087,3.087,0,1,0,0-6.175Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+									<path d="M53.432,408.369a.518.518,0,0,0-.518.518V422.9a.518.518,0,0,0,.518.518h4.014V408.369Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+									<path d="M129.568,423.422a.518.518,0,0,0,.518-.518V408.887a.518.518,0,0,0-.518-.518h-4.014v15.053Z" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+									<path d="M75.65,452.923v9.79a4.222,4.222,0,0,1-2.755,3.958l-29.946,11.1a12.148,12.148,0,0,0-7.927,11.391v4.021H147.978v-4.021a12.148,12.148,0,0,0-7.927-11.391l-29.946-11.1a4.222,4.222,0,0,1-2.755-3.958v-9.79" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+								</g>
+							</svg>
+						</mask>
+						<mask id="ml">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 600 600" x="28%" y="11%" xmlSpace="preserve">
+								<g>
+									<g>
+										<path d="M409.55,70.347C374.452,24.326,321.356,0,256,0c-65.356,0-118.452,24.326-153.549,70.347
+	          		c-30.209,39.611-46.177,93.382-46.177,155.5c0,67.981,19.424,137.928,53.291,191.905C147.701,478.529,199.706,512,256,512
+	          		s108.3-33.471,146.434-94.248c33.868-53.977,53.291-123.923,53.291-191.905C455.726,163.729,439.758,109.958,409.55,70.347z
+	          		 M119.775,365.971l38.521,6.948l9.294,65.003C148.515,418.707,132.353,393.859,119.775,365.971z M239.304,381.505h-33.776v33.391
+	          		h33.776v62.386c-11.848-1.871-23.193-5.7-33.959-11.205L187.94,344.336l-82.026-14.795
+	          		c-10.513-33.336-16.248-69.084-16.248-103.693c0-47.361,10.765-90.154,30.551-122.404v49.54h33.391V65.389
+	          		c10.576-8.396,22.332-15.141,35.224-20.241v95.992l50.472,28.57V381.505z M239.304,131.34l-17.081-9.669V36.038
+	          		c5.535-0.912,11.232-1.583,17.081-2.022V131.34z M272.696,34.016c5.85,0.44,11.546,1.111,17.081,2.022v85.633l-17.081,9.669
+	          		V34.016z M344.411,437.921l9.294-65.003l38.521-6.949C379.647,393.859,363.485,418.707,344.411,437.921z M324.061,344.334
+	          		l-17.406,121.741c-10.766,5.505-22.112,9.335-33.96,11.206v-62.386h33.776v-33.391h-33.776V169.71l50.472-28.571V45.147
+	          		c12.892,5.1,24.648,11.846,35.224,20.241v87.596h33.391v-49.54c19.785,32.249,30.551,75.042,30.551,122.403
+	          		c0,34.609-5.736,70.359-16.248,103.693L324.061,344.334z" />
+									</g>
+								</g>
+								<g>
+									<g>
+										<path d="M343.335,203.788c-29.668,0-53.806,24.137-53.806,53.806c0,29.669,24.138,53.807,53.806,53.807
+	          		c29.669,0,53.807-24.137,53.807-53.807C397.142,227.926,373.004,203.788,343.335,203.788z M343.335,278.009
+	          		c-11.256,0-20.414-9.158-20.414-20.415c0-11.256,9.158-20.414,20.414-20.414s20.415,9.158,20.415,20.414
+	          		C363.75,268.851,354.591,278.009,343.335,278.009z" />
+									</g>
+								</g>
+								<g>
+									<g>
+										<circle cx="343.329" cy="257.592" r="13.866" />
+									</g>
+								</g>
+								<g>
+									<g>
+										<path d="M168.665,203.788c-29.668,0-53.806,24.138-53.806,53.806c0,29.669,24.137,53.807,53.806,53.807
+	          		c29.669,0,53.807-24.138,53.807-53.807C222.472,227.926,198.334,203.788,168.665,203.788z M168.665,278.009
+	          		c-11.256,0-20.414-9.158-20.414-20.415c0-11.256,9.158-20.414,20.414-20.414c11.257,0,20.415,9.158,20.415,20.414
+	          		C189.08,268.851,179.922,278.009,168.665,278.009z" />
+									</g>
+								</g>
+								<g>
+									<g>
+										<circle cx="168.659" cy="257.592" r="13.866" />
+									</g>
+								</g>
+							</svg>
+						</mask>
+						<mask id="pi">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg width="450px" height="450px" viewBox="0 0 100 100" x="28.5%" y="14%" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+								<title>internet-of-things-solid</title>
+								<path d="M30.86,20.94a4.74,4.74,0,0,1,1.86.64h.05a15.12,15.12,0,0,0-.61-8.37,1,1,0,1,0-1.87.69A13.19,13.19,0,0,1,30.86,20.94Z" />
+								<path d="M26.33,28.58a13,13,0,0,1-6.07,2.82,1,1,0,1,0,.17,2h.18A15.16,15.16,0,0,0,27.82,30v-.07A4.7,4.7,0,0,1,26.33,28.58Z" />
+								<path d="M15.62,31.34a13.27,13.27,0,0,1-4.29-1.61A15.09,15.09,0,0,1,9.7,28.62,4.69,4.69,0,0,1,8.24,30a15.9,15.9,0,0,0,2.07,1.48,15.4,15.4,0,0,0,4.94,1.86h.19a1,1,0,0,0,.18-2Z" />
+								<path d="M4.56,21.15q.3,0,.6-.09A13,13,0,0,1,5.7,14a1,1,0,0,0-1.88-.69,15,15,0,0,0-.56,8.43A4.77,4.77,0,0,1,4.56,21.15Z" />
+								<path d="M31.9,23a3.2,3.2,0,0,0-2.43-.42,3.33,3.33,0,0,0-1.4.77L24.2,21.11a6.87,6.87,0,0,0-2.77-8.43l-.11-.07a6.73,6.73,0,0,0-2.42-.81V8a3.23,3.23,0,0,0,1.88-1.5A3.3,3.3,0,0,0,19.65,2a3.15,3.15,0,0,0-2.42-.32,3.24,3.24,0,0,0-2,1.51,3.3,3.3,0,0,0,1.13,4.46A3,3,0,0,0,17.1,8v3.8a6.63,6.63,0,0,0-4.86,3.28,6.85,6.85,0,0,0-.42,6l-4,2.29A3.79,3.79,0,0,0,7.37,23,3.2,3.2,0,0,0,3,24.21H3a3.3,3.3,0,0,0,1.1,4.46,3.21,3.21,0,0,0,1.65.46,2.93,2.93,0,0,0,.78-.1,3.25,3.25,0,0,0,2.34-3.94l0-.17,3.88-2.24a7,7,0,0,0,1.89,1.71,6.49,6.49,0,0,0,8.73-1.7l3.83,2.21a3.29,3.29,0,0,0,1.45,3.64A3.18,3.18,0,0,0,33,27.41,3.3,3.3,0,0,0,31.9,23Z" />
+								<path d="M8.05,10A13,13,0,0,1,13.4,6.23a5,5,0,0,1-.17-2.07,15.15,15.15,0,0,0-6.7,4.51A1,1,0,0,0,8.05,10Z" />
+								<path d="M24.67,7.23A13.11,13.11,0,0,1,27.93,10a1,1,0,1,0,1.52-1.3,15,15,0,0,0-3.76-3.2,15.87,15.87,0,0,0-2.94-1.33,4.79,4.79,0,0,1-.15,2.06A14.1,14.1,0,0,1,24.67,7.23Z" />
+							</svg>
+						</mask>
+						<mask id="secure">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="200px" height="200px"
+								viewBox="0 0 600 600" xmlSpace="preserve" x="38%" y="24%">
+								<g>
+									<path d="M156.834,62.487c-16.939,0-30.72,8.972-30.72,20s13.781,20,30.72,20s30.719-8.972,30.719-20S173.773,62.487,156.834,62.487
+          		z"/>
+									<g>
+										<path d="M267.013,329.333c-10.513,8.301-23.41,12.82-37.01,12.82c-13.231,0-25.803-4.276-36.155-12.153H77.855
+          			c-19.514,0-35.39-15.875-35.39-35.39v-19.218c9.604,7.996,21.945,12.811,35.39,12.811h92.562
+          			c-0.191-1.957-0.288-3.935-0.288-5.927c0-4.823,0.576-9.555,1.678-14.128H77.855c-19.514,0-35.39-15.876-35.39-35.39v-19.061
+          			c9.604,7.998,21.943,12.818,35.39,12.818h130.301c6.866-2.686,14.238-4.107,21.834-4.107c2.371,0,4.74,0.14,7.09,0.418
+          			l42.653-42.655c3.243-3.239,7.18-5.542,11.47-6.782v-118c0-30.542-24.848-55.39-55.39-55.39H77.855
+          			c-30.542,0-55.39,24.848-55.39,55.39v177.368c0,0.019,0.002,0.037,0.002,0.055h-0.002v61.797c0,30.542,24.848,55.39,55.39,55.39
+          			h157.958c17.403,0,32.948-8.075,43.11-20.667H267.013z M97.074,38.752c16.109-10.488,37.332-16.265,59.76-16.265
+          			c22.427,0,43.65,5.776,59.76,16.265c17.436,11.352,27.037,26.884,27.037,43.735s-9.602,32.384-27.037,43.735
+          			c-16.109,10.488-37.333,16.265-59.76,16.265c-22.428,0-43.65-5.776-59.76-16.265c-17.436-11.352-27.038-26.884-27.038-43.735
+          			S79.639,50.104,97.074,38.752z M42.465,152.058c9.604,7.998,21.943,12.817,35.39,12.817h157.958
+          			c13.446,0,25.785-4.82,35.39-12.817v18.905c0,19.514-15.876,35.39-35.39,35.39H77.855c-19.514,0-35.39-15.876-35.39-35.39V152.058
+          			z"/>
+										<g>
+											<path d="M213.305,281.879c-1.172-1.171-3.07-1.172-4.243,0l-4.243,4.242c-0.563,0.563-0.879,1.326-0.879,2.121
+          				c0,0.796,0.316,1.559,0.879,2.122l17.097,17.099c0.586,0.586,1.354,0.879,2.121,0.879c0.768,0,1.535-0.293,2.121-0.878
+          				l4.243-4.242c0.563-0.563,0.879-1.326,0.879-2.121c0-0.796-0.315-1.559-0.878-2.122L213.305,281.879z"/>
+											<path d="M323.383,188.9c-2.64-2.64-6.295-4.154-10.063-4.154l-14.826,0.176c-3.718,0.045-7.219,1.519-9.858,4.153l-47.297,47.299
+          				c-3.705-0.912-7.514-1.374-11.349-1.374c-12.627,0-24.496,4.915-33.418,13.84c-8.932,8.931-13.851,20.805-13.851,33.436
+          				c0,12.631,4.919,24.505,13.851,33.435c8.931,8.93,20.804,13.848,33.432,13.848c12.629,0,24.502-4.918,33.434-13.848
+          				c11.739-11.736,16.435-28.746,12.472-44.772l47.295-47.296c2.637-2.635,4.112-6.137,4.155-9.859l0.176-14.691
+          				C327.577,195.297,326.064,191.582,323.383,188.9z M262.884,269.338l0.586,1.758c4.254,12.779,0.99,26.623-8.518,36.129
+          				c-6.666,6.665-15.526,10.335-24.949,10.335c-9.423,0-18.283-3.67-24.947-10.335c-6.664-6.663-10.335-15.523-10.335-24.949
+          				c0-9.425,3.671-18.286,10.336-24.951c6.656-6.658,15.511-10.325,24.933-10.325c3.818,0,7.585,0.609,11.193,1.811l1.759,0.586
+          				c1.077,0.358,2.266,0.079,3.069-0.725l51.105-51.108c0.414-0.413,0.94-0.636,1.521-0.643l14.719-0.176
+          				c0.564,0,1.142,0.239,1.541,0.638c0.406,0.406,0.645,0.993,0.638,1.568l-0.176,14.692c-0.007,0.579-0.228,1.102-0.64,1.514
+          				L306,223.877l-5.9-5.899c-1.172-1.171-3.071-1.171-4.243,0.001l-4.242,4.243c-0.563,0.563-0.878,1.326-0.878,2.122
+          				c0,0.795,0.316,1.559,0.879,2.121l5.899,5.898l-13.25,13.25l-5.898-5.899c-1.172-1.172-3.071-1.171-4.243,0l-4.243,4.242
+          				c-0.563,0.563-0.879,1.326-0.879,2.122c0,0.795,0.316,1.559,0.879,2.121l5.899,5.9l-12.17,12.171
+          				C262.806,267.073,262.525,268.261,262.884,269.338z"/>
+										</g>
+									</g>
+								</g>
+							</svg>
+						</mask>
+						<mask id="gfx">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg id="Layer_1" width="200px" height="200px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" x="28%" y="17%">
+								<path d="M456,.15,246.9,54.64,216,107.73l-62.8-.46L.15,256.1l153,148.82,62.76-.48,31,53.07L456,512l56-203.26L480.17,256.1,512,203.45ZM221,116.27,381,76.3,289.14,231H105.51Zm0,279.62L105.51,281.22H289.14l91.8,154.64ZM425.7,410.72,333.85,256.1,425.7,101.41,470,256.1Z" transform="translate(-0.15 -0.15)" />
+							</svg>
+						</mask>
+						<mask id="programming">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg width="400px" height="400px" viewBox="0 0 100 100" x="31%" y="18%" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+								<path d="M32,5H4A2,2,0,0,0,2,7V29a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V7A2,2,0,0,0,32,5ZM6.8,15.81V13.17l10,4.59v2.08l-10,4.59V21.78l6.51-3ZM23.4,25.4H17V23h6.4ZM4,9.2V7H32V9.2Z" className="clr-i-solid clr-i-solid-path-1"></path>
+							</svg>
+						</mask>
+						<mask id="web">
+							<rect fill='white' width="100%" height="100%" ></rect>
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300px" height="300px" x="26%" y="16%">
+								<path d="M3.34,0h116.2a3.35,3.35,0,0,1,3.34,3.34v77a3.35,3.35,0,0,1-3.34,3.34H3.34A3.35,3.35,0,0,1,0,80.32v-77A3.35,3.35,0,0,1,3.34,0ZM13.49,63.91a2.59,2.59,0,1,1,0-5.17H52.94a2.59,2.59,0,1,1,0,5.17Zm.15-13.28a2.59,2.59,0,0,1,0-5.17H42.4a2.59,2.59,0,0,1,0,5.17ZM13.49,37.4a2.59,2.59,0,1,1,0-5.17H33.85a2.59,2.59,0,0,1,0,5.17Zm0-13.26a2.59,2.59,0,1,1,0-5.17H25.3a2.59,2.59,0,0,1,0,5.17Zm97,26.19v6.44l-13.23,7.5v-7.5l8.52-3.24-8.52-3.2v-7.5l13.23,7.5Zm-22.92,16H82l7-27.11h5.63l-7,27.11Zm-9.41-16-8.53,3.2,8.53,3.24v7.5L65,56.77V50.33l13.24-7.5v7.5Zm5.67-38.68v3.67A1.83,1.83,0,0,1,82,17.15H79a14.43,14.43,0,0,1-1.6,3.5l2,2a1.83,1.83,0,0,1,0,2.58l-2.71,2.71a1.83,1.83,0,0,1-2.58,0l-2.18-2.18a14.43,14.43,0,0,1-3.6,1.35v2.82a1.84,1.84,0,0,1-1.83,1.83H62.63a1.84,1.84,0,0,1-1.83-1.83V26.85a14.2,14.2,0,0,1-3.5-1.59l-2,2a1.82,1.82,0,0,1-2.59,0L50,24.55A1.84,1.84,0,0,1,50,22l2.18-2.17a14.5,14.5,0,0,1-1.35-3.61H48a1.83,1.83,0,0,1-1.83-1.83v-2.7H3.09V70.84a3,3,0,0,0,3,3H116.85a3,3,0,0,0,3-3V11.65Zm-11.42,0H57.62a7.71,7.71,0,0,0-.11,1.28,7.52,7.52,0,0,0,15,0,7.71,7.71,0,0,0-.1-1.28Zm41.79-6.73a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm-13.44,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm6.72,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2ZM46.29,88.27h30.3c.08,5.24,2.24,9.94,8.09,13.63H38.2c4.71-3.41,8.11-7.54,8.09-13.63Z" />
+							</svg>
+						</mask>
+
+						<rect width="100%" fill="url('#radial-matrix')" height="100%" className={maskRStyle}></rect>
+					</svg>
+				</div>
+				<div className='flex flex-col col-span-1 p-2 justify-self-center'>
+					<div className='grid grid-flow-col grid-rows-2 gap-4'>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-ar')} onMouseLeave={() => setMaskRStyle('mask-title')}>AR/VR</button>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-ml')} onMouseLeave={() => setMaskRStyle('mask-title')}>AI/ML</button>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-pi')} onMouseLeave={() => setMaskRStyle('mask-title')}>IOT</button>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-secure')} onMouseLeave={() => setMaskRStyle('mask-title')}>Security</button>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-gfx')} onMouseLeave={() => setMaskRStyle('mask-title')}>Computer Graphics</button>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-programming')} onMouseLeave={() => setMaskRStyle('mask-title')}>System Programming</button>
+						<button className='row-span-1 px-2 py-1 text-xs font-semibold text-black bg-white rounded-md hover:shadow-lg hover:shadow-black/30 hover:bg-black hover:text-white' onMouseEnter={() => setMaskRStyle('mask-web')} onMouseLeave={() => setMaskRStyle('mask-title')}>Web & Mobile App</button>
+					</div>
+				</div>
+			</motion.div>
+		</div>
+	)
 };
 
 export default Domains;

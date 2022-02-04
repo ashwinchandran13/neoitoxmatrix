@@ -14,32 +14,64 @@
     mask: url("#mask");
   }
 
+  .mask-title {
+    mask: url("#title");
+  }
+
   .mask-vr {
     mask: url("#vr");
   }
 
+  .mask-ar {
+    mask: url("#ar");
+  }
+
   .mask-ai {
     mask: url("#ai");
+  }
+
+  .mask-ml {
+    mask: url("#ml");
   }
   
   .mask-iot {
     mask: url("#iot");
   }
 
+  .mask-pi {
+    mask: url("#pi");
+  }
+
   .mask-security {
     mask: url("#security");
+  }
+
+  .mask-secure {
+    mask: url("#secure");
   }
 
   .mask-cg {
     mask: url("#cg");
   }
 
+  .mask-gfx {
+    mask: url("#gfx");
+  }
+
   .mask-systemProgramming {
     mask: url('#systemProgramming')
   }
 
+  .mask-programming {
+    mask: url('#programming')
+  }
+
   .mask-app {
     mask: url('#app')
+  }
+
+  .mask-web {
+    mask: url('#web')
   }
 
   .mask-neoito {

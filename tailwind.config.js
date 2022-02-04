@@ -21,7 +21,8 @@ module.exports = {
       },
       backgroundImage: {
         'matrix-circular': "radial-gradient(#39744d 10%, #000000 80%, #000000 100%)",
-        'radial_matrix_bg': "radial-gradient(100% 185.14% at 100% 100%, rgba(217, 102, 160, 1), rgba(156, 61, 117, 1))"
+        'radial_matrix_bg': "radial-gradient(100% 185.14% at 100% 100%, rgba(217, 102, 160, 1), rgba(156, 61, 117, 1))",
+        'invert_radial_matrix_bg': "radial-gradient(100% 185.14% at 100% 100%, rgba(38, 153, 95, 1), rgba(99, 194, 138, 1))"
       },
     },
   },

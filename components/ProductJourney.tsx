@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { dashInUp, fadeInUp, slideInRight, slideInUp, viewPort } from '../animations';
 import { products as productsData } from '../constants/data';
 import { Product } from '../type';
 import ProductCard from './ProductCard';
@@ -16,18 +18,18 @@ const ProductJourney = () => {
   }
 
   return (
-    <div className='h-screen p-8 mx-auto mb-20 lg:max-w-6xl md:max-w-2xl'>
-      <div className='md:mt-24 mt-10 lg:max-w-[30rem] md:max-w-xs mb-14'>
+    <div className='h-screen p-8 pb-20 mx-auto lg:max-w-6xl md:max-w-2xl'>
+      <motion.div variants={fadeInUp} whileInView="animate" initial="initial" viewport={viewPort} className='md:mt-24 mt-10 lg:max-w-[30rem] md:max-w-xs mb-14'>
         <h3 className='text-2xl leading-tight text-white lg:text-6xl md:text-4xl'>Product Journey</h3>
-      </div>
+      </motion.div>
       <ProductNavbar handleFilterProduct={handleFilterProduct} active={active} />
-      <div className='relative my-24'>
+      <motion.div variants={fadeInUp} whileInView="animate" initial="initial" viewport={viewPort}  className='relative my-24'>
         {products.map((product) => (
-          <div key={product.id} >
+          <motion.div variants={dashInUp} initial="initial" animate="animate" key={product.id} >
             <ProductCard product={product} />
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
