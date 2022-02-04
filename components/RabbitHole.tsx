@@ -40,6 +40,7 @@ const RabbitHole: FunctionComponent<{ setScreen: Function }> = ({ setScreen }) =
             <motion.div variants={easeIn} initial="initial" animate="animate" exit="exit" className='flex flex-col col-span-1 p-14 justify-self-center'>
                 <h3 className='text-2xl leading-tight text-center text-black md:text-5xl'>Are you the one?</h3>
                 <div className='mt-12 text-lg leading-loose tracking-normal text-justify text-black md:text-xl'>
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
                     <p>We're stunned by the minds who took us forward. We're even more amused to where you could take us. Join the Neoito cause today.</p>
                 </div>
                 <div className='grid grid-cols-2 gap-6 mt-10'>

@@ -10,6 +10,7 @@ import Faq from '../components/Faq';
 import Careers from '../components/Careers';
 import FooterBar from '../components/FooterBar'
 import { motion } from 'framer-motion';
+import { GetServerSidePropsContext } from 'next';
 
 const index = () => {
   return (
@@ -30,3 +31,12 @@ const index = () => {
 };
 
 export default index;
+
+export const getServerSideProps = async (context:GetServerSidePropsContext) => {  
+  return {
+    props:{
+      endpoint: process.env.VERCEL_URL,
+    }
+  }
+
+}
