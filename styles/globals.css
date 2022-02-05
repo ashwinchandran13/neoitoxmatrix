@@ -89,11 +89,19 @@
     border-top: 4px solid rgb(139, 224, 174);
     transition: border-color 0.2s cubic-bezier(0, 0.42, 0.2, 0.99) 0s;
   }
-
-  
 }
 
 body {
   background-color: black;
   font-family: 'Rubik', sans-serif;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: radial-gradient(100% 185.14% at 100% 100%, rgba(38, 153, 95, 1), rgba(99, 194, 138, 1));
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
 }

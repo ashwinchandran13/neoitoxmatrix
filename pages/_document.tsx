@@ -17,7 +17,7 @@ class MyDocument extends Document {
             />
             <meta 
               name="keywords"
-              content="NeoitoXMatrix"
+              content="Neoito Website with Matrix Theme"
             />
           </Head>
           <body>

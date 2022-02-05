@@ -23,6 +23,7 @@ const ProductCard:FunctionComponent<{
               width="400px"
               height="280px"
               layout='responsive'
+              loading='eager'
             />
           </div>
           <div className='flex flex-col self-start justify-center align-top sm:row-span-1 lg:col-span-1 md:col-span-1'>

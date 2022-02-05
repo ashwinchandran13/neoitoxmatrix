@@ -12,10 +12,16 @@ import FooterBar from '../components/FooterBar'
 import { motion } from 'framer-motion';
 import { GetServerSidePropsContext } from 'next';
 import { keepAfloat } from '../animations';
+import Head from 'next/head';
 
 const index = () => {
   return (
     <div className='relative overflow-x-clip'>
+      <Head>
+        <title>
+          Neotio X The Matrix
+        </title>
+      </Head>
       <Hero />
       <div className='bg-matrix-circular '>
         <Mission />
