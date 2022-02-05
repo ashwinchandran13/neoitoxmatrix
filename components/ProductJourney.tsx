@@ -18,8 +18,8 @@ const ProductJourney = () => {
   }
 
   return (
-    <div className='h-screen p-8 pb-20 mx-auto lg:max-w-6xl md:max-w-2xl'>
-      <motion.div variants={fadeInUp} whileInView="animate" initial="initial" viewport={viewPort} className='md:mt-24 mt-10 lg:max-w-[30rem] md:max-w-xs mb-14'>
+    <motion.div variants={fadeInUp} initial="initial" whileInView="animate" className='h-screen px-8 pt-10 mx-auto lg:max-w-6xl md:max-w-2xl md:pt-24'>
+      <motion.div variants={fadeInUp} whileInView="animate" initial="initial" viewport={viewPort} className=' lg:max-w-[30rem] md:max-w-xs mb-14'>
         <h3 className='text-2xl leading-tight text-white lg:text-6xl md:text-4xl'>Product Journey</h3>
       </motion.div>
       <ProductNavbar handleFilterProduct={handleFilterProduct} active={active} />
@@ -30,7 +30,7 @@ const ProductJourney = () => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

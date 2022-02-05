@@ -1,14 +1,30 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import Image from 'next/image'
 import neoitoLogo from '../public/assets/images/logo-neoito.png'
 import { headers } from '../constants/data';
+import { motion, useViewportScroll } from 'framer-motion';
+import { headerSlide } from '../animations';
 
 const NavBar:FunctionComponent = () => {
 
   const [menu, setMenu] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    return scrollY.onChange(() => updateScroll())
+  });
+
+  const updateScroll = () => {
+    if (scrollY?.get() < scrollY?.getPrevious()) {
+      setHidden(false);
+    } else if (scrollY?.get() > 100 && scrollY?.get() > scrollY?.getPrevious()) {
+      setHidden(true);
+    }
+  }  
 
   return (
-    <div className='sticky w-full bg-matrix_green_header drop-shadow-2xl' id='navbar'>
+    <motion.div variants={headerSlide} animate={hidden ? "animate" : "initial"}  className='z-[1000] fixed w-full bg-matrix_green_header drop-shadow-2xl' id='navbar'>
       <div className="sticky flex justify-between p-4">
         <div className='flex items-center ml-0 lg:ml-20'>
           <svg width="113" height="28" viewBox="0 0 113 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +63,7 @@ const NavBar:FunctionComponent = () => {
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

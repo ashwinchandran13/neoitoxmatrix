@@ -1,5 +1,6 @@
+import { Variants } from "framer-motion"
 
-export const easeIn = {
+export const easeIn: Variants = {
     initial: {
         opacity: 0
     },
@@ -19,7 +20,7 @@ export const easeIn = {
     }
 }
 
-export const fadeInUp = {
+export const fadeInUp: Variants = {
     initial: {
         opacity: 0,
         y: 60
@@ -33,12 +34,12 @@ export const fadeInUp = {
     }
 }
 
-export const stagger = {
+export const stagger: Variants = {
     initial: {
     },
-    animate: { 
+    animate: {
         transition: {
-            staggerChildren: 0.2
+            staggerChildren: 0.4
         }
     },
     exit: {
@@ -46,14 +47,14 @@ export const stagger = {
 }
 
 export const viewPort = {
-    once:true
+    once: true
 }
 
-export const slideInRight = {
+export const slideInRight: Variants = {
     initial: {
         x: -50,
         opacity: 0
-    }, 
+    },
     animate: {
         x: 0,
         opacity: 1,
@@ -70,11 +71,11 @@ export const slideInRight = {
     }
 }
 
-export const slideInLeft = {
+export const slideInLeft: Variants = {
     initial: {
         x: 50,
         opacity: 0
-    }, 
+    },
     animate: {
         x: 0,
         opacity: 1,
@@ -84,11 +85,11 @@ export const slideInLeft = {
     }
 }
 
-export const slideInUp = {
+export const slideInUp: Variants = {
     initial: {
         y: 50,
         opacity: 0
-    }, 
+    },
     animate: {
         y: 0,
         opacity: 1,
@@ -112,4 +113,64 @@ export const dashInUp = {
         stiffness: 100
     }
 }
+
+export const headerSlide: Variants = {
+    initial: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            ease: [0.1, 0.25, 0.3, 1],
+            duration: 0.6
+        }
+    },
+    animate: {
+        opacity: 0,
+        y: -25,
+        transition: {
+            ease: [0.1, 0.25, 0.3, 1],
+            duration: 0.6
+        }
+    }
+}
+
+export const keepAfloat: Variants = {
+    initial: {},
+    animate: {
+        y: -10,
+        transition: {
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2
+        }
+    }
+}
+
+export const draw:Variants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i: number) => {
+        const delay = 1 + i * 0.5;
+        return {
+            pathLength: 1,
+            opacity: 1,
+            transition: {
+                pathLength: { delay, type: "spring", duration: 5, bounce: 0 },
+                opacity: { delay, duration: 1.5 }
+            }
+        };
+    }
+};
+
+export const infiniteLineDraw:Variants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: {
+            pathLength: 1,
+            opacity: 1,
+            transition: {
+                pathLength: { delay: 1, type: "spring", duration: 1.5, bounce: 0, repeat: Infinity, repeatType: "reverse"},
+                opacity: { delay: 0.1, duration: 0.01 }
+            }
+    }
+};
+
+
 

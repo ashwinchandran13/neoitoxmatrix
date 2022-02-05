@@ -11,12 +11,12 @@ import Careers from '../components/Careers';
 import FooterBar from '../components/FooterBar'
 import { motion } from 'framer-motion';
 import { GetServerSidePropsContext } from 'next';
+import { keepAfloat } from '../animations';
 
 const index = () => {
   return (
     <div className='relative overflow-x-clip'>
       <Hero />
-      <div className='w-full bg-center bg-no-repeat bg-cover aspect-[900/100] layer1t' />
       <div className='bg-matrix-circular '>
         <Mission />
         <Domains />

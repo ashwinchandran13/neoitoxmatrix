@@ -6,7 +6,7 @@ import { fadeInUp, stagger, viewPort } from '../animations';
 
 const Client = () => {
   return (
-    <div className="p-8 mx-auto lg:max-w-6xl md:max-w-2xl ">
+    <motion.div variants={fadeInUp} initial="initial" whileInView="animate" className="p-8 mx-auto lg:max-w-6xl md:max-w-2xl ">
       <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={viewPort} className='md:mt-24 mt-10 lg:max-w-[30rem] md:max-w-xs'>
         <h3 className='text-2xl leading-tight text-white lg:text-6xl md:text-4xl'>We Work for Companies you Trust</h3>
       </motion.div>
@@ -24,7 +24,7 @@ const Client = () => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

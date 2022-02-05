@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
 import React, { FunctionComponent } from 'react';
-import { dashInUp, fadeInUp } from '../animations';
+
 import { IFaq } from '../type';
 
 const FaqCard:FunctionComponent<{faq: IFaq}> = ({
@@ -12,7 +11,7 @@ const FaqCard:FunctionComponent<{faq: IFaq}> = ({
     }
 }) => {
     return (
-        <motion.details variants={fadeInUp} initial="initial" animate="animate" className="p-6 mt-10 rounded-lg open:bg-radial_matrix_bg open:ring-1 open:invert open:ring-black/5 open:shadow-lg ">
+        <details className="p-6 mt-10 rounded-lg cursor-pointer open:bg-radial_matrix_bg open:ring-1 open:invert open:ring-black/5 open:shadow-lg">
             <summary className="text-xl font-normal leading-tight text-white select-none lg:text-4xl md:text-2xl ">
                 {title}
             </summary>
@@ -26,7 +25,7 @@ const FaqCard:FunctionComponent<{faq: IFaq}> = ({
                 <button className='py-2 text-xs font-semibold text-black bg-pink-400 shadow-lg md:px-8 md:py-3 md:text-base shadow-pink-400/30 hover:bg-pink-600 hover:text-white'>{buttons[0]}</button>
                 {buttons.length > 1 && (<button className='py-2 text-xs font-semibold text-black border-4 border-black shadow-lg md:px-8 md:py-3 md:text-base shadow-black/30 hover:bg-black hover:text-white'>{buttons[1]}</button>)}
             </div>
-        </motion.details>
+        </details>
     );
 };
 

@@ -5,7 +5,7 @@ import { headers } from '../constants/data';
 
 const FooterBar = () => {
     const heroScroll = () => {
-        return location.href = '#navbar'
+        return location.href = '#hero'
     }
     return (
         <motion.div variants={slideInUp} whileInView="animate" initial="initial" exit="exit" className='w-full px-4 py-6 mt-10 md:h-1/2 md:mt-20 bg-matrix_green_header md:px-64 md:py-10'>
@@ -25,7 +25,7 @@ const FooterBar = () => {
                     </div>
                 </div>
                 <div className='col-span-1 justify-self-end'>
-                    <button className='flex p-2 pr-4 hover:bg-matrix_green_btn hover:shadow-lg hover:shadow-black/30' onClick={() => heroScroll()}>
+                    <button className='flex p-2 pr-4 text-white hover:text-black hover:bg-matrix_green_btn hover:shadow-lg hover:shadow-black/30' onClick={() => heroScroll()}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
                         </svg>
@@ -71,8 +71,8 @@ const FooterBar = () => {
                     <path d="M54.4393 6.13L56.0741 2.21596C60.7259 4.08328 64.0105 8.63571 64.0105 13.9554C64.0105 20.939 58.3498 26.6002 51.3669 26.6002C49.9392 26.6002 48.5668 26.3636 47.2868 25.9273L50.2438 22.2999C50.6142 22.3497 50.9924 22.3755 51.3766 22.3755C56.0211 22.3755 59.7862 18.6101 59.7862 13.9652C59.7862 10.401 57.5693 7.35463 54.4393 6.13ZM51.7079 5.56124C51.5979 5.55698 51.4876 5.55483 51.3766 5.55483C46.7322 5.55483 42.9671 9.32027 42.9671 13.9652C42.9671 17.475 45.117 20.4828 48.1716 21.7432L46.2489 25.5215C41.8158 23.5566 38.7232 19.1172 38.7232 13.9554C38.7232 6.97183 44.384 1.31055 51.3669 1.31055C52.5495 1.31055 53.6943 1.47293 54.78 1.77662L51.7079 5.56124Z" fill="white" />
                     <path d="M45.9469 13.3638L56.6429 0L51.5648 12.0419L57.1977 13.3638L45.705 27.2919L52.2068 14.6818L45.9469 13.3638Z" fill="white" />
                 </svg>
-                <h5 className='text-2xl text-white font-matrixCode'>X</h5>
-                <h5 className='text-3xl text-white font-matrixFont'>THE MATRIX</h5>
+                <h5 className='text-2xl text-white select-none font-matrixCode'>X</h5>
+                <h5 className='text-3xl text-white select-none font-matrixFont'>THE MATRIX</h5>
             </div>
         </motion.div>
     );
