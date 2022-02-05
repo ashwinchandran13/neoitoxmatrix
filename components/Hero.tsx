@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { draw, fadeInUp, infiniteLineDraw } from '../animations';
+import { draw, easeIn, fadeInUp, infiniteLineDraw } from '../animations';
 
 const Hero = () => {
 
@@ -9,7 +9,7 @@ const Hero = () => {
   // }
 
   return (
-    <header className='relative flex items-center justify-center h-screen overflow-hidden' id='hero'
+    <motion.header variants={easeIn} initial="initial" animate="animate" className='relative flex items-center justify-center h-screen overflow-hidden' id='hero'
     // className="sticky top-0 z-50" 
     >
       <motion.div variants={fadeInUp} initial="initial" animate="animate" className='relative z-30 flex flex-col w-auto h-auto p-4 backdrop-blur-sm'>
@@ -41,7 +41,7 @@ const Hero = () => {
       >
         <source src='/assets/matrixRain.mp4' />
       </video>
-    </header>
+    </motion.header>
   );
 };
 
