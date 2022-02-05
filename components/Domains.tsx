@@ -447,11 +447,11 @@ const Domains = () => {
 						</defs>
 
 						<mask id='title'>
-							<rect fill='white' width="140%" height="140%"></rect>
+							<rect fill='white' width="150%" height="150%"></rect>
 							<text className='font-extrabold tracking-wide text-7xl' dominantBaseline="central" x="50%" y="50%" textAnchor='middle' >DOMAINS</text>
 						</mask>
 						<mask id="ar">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg width="600px" height="600px" viewBox="0 0 400 400" x="30%" y="10%" xmlns="http://www.w3.org/2000/svg">
 								<g transform="translate(-33.522 -376.821)">
 									<path d="M62.649,430.7a18.075,18.075,0,0,0,2.809,8.7l5.192,8.124a19.482,19.482,0,0,0,16.415,8.991h8.869a19.481,19.481,0,0,0,16.415-8.991l5.193-8.124a18.084,18.084,0,0,0,2.808-8.7" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
@@ -465,7 +465,7 @@ const Domains = () => {
 							</svg>
 						</mask>
 						<mask id="ml">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 600 600" x="28%" y="11%" xmlSpace="preserve">
 								<g>
 									<g>
@@ -512,7 +512,7 @@ const Domains = () => {
 							</svg>
 						</mask>
 						<mask id="pi">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg width="450px" height="450px" viewBox="0 0 100 100" x="28.5%" y="14%" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 								<title>internet-of-things-solid</title>
 								<path d="M30.86,20.94a4.74,4.74,0,0,1,1.86.64h.05a15.12,15.12,0,0,0-.61-8.37,1,1,0,1,0-1.87.69A13.19,13.19,0,0,1,30.86,20.94Z" />
@@ -525,7 +525,7 @@ const Domains = () => {
 							</svg>
 						</mask>
 						<mask id="secure">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="200px" height="200px"
 								viewBox="0 0 600 600" xmlSpace="preserve" x="38%" y="24%">
 								<g>
@@ -567,19 +567,19 @@ const Domains = () => {
 							</svg>
 						</mask>
 						<mask id="gfx">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg id="Layer_1" width="200px" height="200px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" x="28%" y="17%">
 								<path d="M456,.15,246.9,54.64,216,107.73l-62.8-.46L.15,256.1l153,148.82,62.76-.48,31,53.07L456,512l56-203.26L480.17,256.1,512,203.45ZM221,116.27,381,76.3,289.14,231H105.51Zm0,279.62L105.51,281.22H289.14l91.8,154.64ZM425.7,410.72,333.85,256.1,425.7,101.41,470,256.1Z" transform="translate(-0.15 -0.15)" />
 							</svg>
 						</mask>
 						<mask id="programming">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg width="400px" height="400px" viewBox="0 0 100 100" x="31%" y="18%" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 								<path d="M32,5H4A2,2,0,0,0,2,7V29a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V7A2,2,0,0,0,32,5ZM6.8,15.81V13.17l10,4.59v2.08l-10,4.59V21.78l6.51-3ZM23.4,25.4H17V23h6.4ZM4,9.2V7H32V9.2Z" className="clr-i-solid clr-i-solid-path-1"></path>
 							</svg>
 						</mask>
 						<mask id="web">
-							<rect fill='white' width="140%" height="140%" ></rect>
+							<rect fill='white' width="150%" height="150%" ></rect>
 							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300px" height="300px" x="26%" y="16%">
 								<path d="M3.34,0h116.2a3.35,3.35,0,0,1,3.34,3.34v77a3.35,3.35,0,0,1-3.34,3.34H3.34A3.35,3.35,0,0,1,0,80.32v-77A3.35,3.35,0,0,1,3.34,0ZM13.49,63.91a2.59,2.59,0,1,1,0-5.17H52.94a2.59,2.59,0,1,1,0,5.17Zm.15-13.28a2.59,2.59,0,0,1,0-5.17H42.4a2.59,2.59,0,0,1,0,5.17ZM13.49,37.4a2.59,2.59,0,1,1,0-5.17H33.85a2.59,2.59,0,0,1,0,5.17Zm0-13.26a2.59,2.59,0,1,1,0-5.17H25.3a2.59,2.59,0,0,1,0,5.17Zm97,26.19v6.44l-13.23,7.5v-7.5l8.52-3.24-8.52-3.2v-7.5l13.23,7.5Zm-22.92,16H82l7-27.11h5.63l-7,27.11Zm-9.41-16-8.53,3.2,8.53,3.24v7.5L65,56.77V50.33l13.24-7.5v7.5Zm5.67-38.68v3.67A1.83,1.83,0,0,1,82,17.15H79a14.43,14.43,0,0,1-1.6,3.5l2,2a1.83,1.83,0,0,1,0,2.58l-2.71,2.71a1.83,1.83,0,0,1-2.58,0l-2.18-2.18a14.43,14.43,0,0,1-3.6,1.35v2.82a1.84,1.84,0,0,1-1.83,1.83H62.63a1.84,1.84,0,0,1-1.83-1.83V26.85a14.2,14.2,0,0,1-3.5-1.59l-2,2a1.82,1.82,0,0,1-2.59,0L50,24.55A1.84,1.84,0,0,1,50,22l2.18-2.17a14.5,14.5,0,0,1-1.35-3.61H48a1.83,1.83,0,0,1-1.83-1.83v-2.7H3.09V70.84a3,3,0,0,0,3,3H116.85a3,3,0,0,0,3-3V11.65Zm-11.42,0H57.62a7.71,7.71,0,0,0-.11,1.28,7.52,7.52,0,0,0,15,0,7.71,7.71,0,0,0-.1-1.28Zm41.79-6.73a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm-13.44,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2Zm6.72,0a2,2,0,1,1-2,2,2,2,0,0,1,2-2ZM46.29,88.27h30.3c.08,5.24,2.24,9.94,8.09,13.63H38.2c4.71-3.41,8.11-7.54,8.09-13.63Z" />
 							</svg>
