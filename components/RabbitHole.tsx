@@ -17,7 +17,7 @@ const RabbitHole: FunctionComponent<{ setScreen: Function }> = ({ setScreen }) =
                 <svg className='absolute top-0 left-0 w-full h-full '>
                     <mask id='neoito'>
                         <rect fill='white' width="120%" height="120%"></rect>
-                        <motion.svg initial="hidden" animate="visible" width="100%" height="100%" viewBox="0 0 27 28" xmlns="http://www.w3.org/2000/svg">
+                        <motion.svg initial="hidden" x="" y="12" animate="visible" width="100%" height="100%" viewBox="0 0 27 28" xmlns="http://www.w3.org/2000/svg">
                             <motion.path variants={draw} custom={3} d="M16.4393 6.13L18.0741 2.21596C22.7259 4.08328 26.0105 8.63571 26.0105 13.9554C26.0105 20.939 20.3498 26.6002 13.3669 26.6002C11.9392 26.6002 10.5668 26.3636 9.28676 25.9273L12.2438 22.2999C12.6142 22.3497 12.9924 22.3755 13.3766 22.3755C18.0211 22.3755 21.7862 18.6101 21.7862 13.9652C21.7862 10.401 19.5693 7.35463 16.4393 6.13ZM13.7079 5.56124C13.5979 5.55698 13.4876 5.55483 13.3766 5.55483C8.73218 5.55483 4.96711 9.32027 4.96711 13.9652C4.96711 17.475 7.11701 20.4828 10.1716 21.7432L8.24893 25.5215C3.81576 23.5566 0.723236 19.1172 0.723236 13.9554C0.723236 6.97183 6.38396 1.31055 13.3669 1.31055C14.5495 1.31055 15.6943 1.47293 16.78 1.77662L13.7079 5.56124Z" fill="#000" />
                             <motion.path variants={draw} custom={1} d="M7.94691 13.3638L18.6429 0L13.5648 12.0419L19.1977 13.3638L7.70502 27.2919L14.2068 14.6818L7.94691 13.3638Z" fill="#000" />
                         </motion.svg>
