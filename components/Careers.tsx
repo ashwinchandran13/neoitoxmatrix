@@ -11,17 +11,19 @@ const Careers = () => {
 
     return (
         <motion.div variants={fadeInUp} whileInView="animate" initial="initial" className='lg:mx-6 mx-0 box-border mt-20 md:h-[72vh] bg-white'>
+                <AnimatePresence exitBeforeEnter>
             {
                 screen === 'pill screen' ? (
-                    <PillScreen setScreen={setScreen} />
+                    <PillScreen key='pill' setScreen={setScreen} />
                 ) : (
                     screen === 'rabbit hole' ? (
-                        <RabbitHole setScreen={setScreen} />
+                        <RabbitHole key='hole' setScreen={setScreen} />
                     ) : (
-                        <Wonderland setScreen={setScreen} />
+                        <Wonderland key='wonderland' setScreen={setScreen} />
                     )
                 )
             }
+            </AnimatePresence>
         </motion.div>
     );
 };
