@@ -19,7 +19,7 @@ const index = () => {
     <div className='relative overflow-x-clip'>
       <Head>
         <title>
-          Neotio X The Matrix
+          Neoito X The Matrix
         </title>
       </Head>
       <Hero />

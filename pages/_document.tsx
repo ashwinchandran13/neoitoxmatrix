@@ -13,7 +13,7 @@ class MyDocument extends Document {
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet"/>
             <meta 
               name="description"
-              content="NeoitoXMatrix"
+              content="Neoito Website with Matrix Theme"
             />
             <meta 
               name="keywords"
